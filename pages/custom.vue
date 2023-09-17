@@ -11,7 +11,7 @@
                     <div>
                         <VueDraggableNext class="dragArea list-group w-full" :list="list1"
                             :group="{ name: 'task', pull: 'clone', put: false }" :sort="true" @change="log"
-                            :move="checkMove">
+                            :clone="cloneDog" :move="checkMove">
                             <div class="list-group-item bg-gray-300 m-1 p-3 rounded-md text-center" v-for="element in list1"
                                 :key="element.name">
                                 {{ element.name }}
@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-span-3 bg-blue-400 w-full h-[100vh]">
                     <h1 class="w-full bg-gray-600 text-white text-center">Page Element</h1>
-                    <div>
+                    <div class="px-4">
                         <LazyNested :tasks="list" />
                     </div>
                 </div>
@@ -37,25 +37,34 @@
 import { VueDraggableNext } from 'vue-draggable-next';
 
 const enabled = true;
+let idGlobal = 8;
 const list1 = ref([
-    { name: 'Component-1', tasks: [] },
-    { name: 'Component-2', tasks: [] },
-    { name: 'Component-3', tasks: [] },
-    { name: 'Component-4', tasks: [] },
+    { id: 1, name: 'Component-1', tasks: [] },
+    { id: 2, name: 'Component-2', tasks: [] },
+    { id: 3, name: 'Component-3', tasks: [] },
+    { id: 4, name: 'Component-4', tasks: [] },
 ]);
 
 const list = ref([
     {
+        id: 5,
         name: 'body',
         tasks: []
     },
 ])
 
-const checkMove = (evt) => {
-    console.log(evt.draggedContext.element.name);
+const cloneDog = ({ id }) => {
+    return {
+        id: idGlobal++,
+        name: `element- ${id}`,
+        tasks: []
+    };
 }
-const log = (event) => {
-    console.log(event)
-};
+// const checkMove = (evt) => {
+//     console.log(evt.draggedContext.element.name);
+// }
+// const log = (event) => {
+//     console.log(event)
+// };
 </script>
 <style></style>
