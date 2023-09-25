@@ -56,17 +56,9 @@ const blogs = ref([
         id: 2, name: 'Footer', component_name: 'Footer', components: [], details_com: []
     },
     {
-        id: 3, name: 'Grid', component_name: 'GridTwoCol', components: [
-            {
-                id: 45566677, name: 'Card', component_name: 'Card', components: [], details_com: [
-                    { id: 26_1, title: 'This is left title', sub_title: 'Domestic cattle belong to the genus Bos and the species taurus and indicus.', style: '' },
-                ]
-            },
-            {
-                id: 45566677, name: 'Card', component_name: 'Card', components: [], details_com: [
-                    { id: 26_1, title: 'This is right title', sub_title: 'Domestic cattle belong to the genus Bos and the species taurus and indicus.', style: '' },
-                ]
-            }
+        id: 3, name: 'Grid', component_name: 'GridTwoCol', components: [], details_com: [
+            { id: 26_1, title: 'This is left title', sub_title: 'Domestic cattle belong to the genus Bos and the species taurus and indicus.', style: '', comp: [{ component_name: 'Footer' }] },
+            { id: 27_1, title: 'This is rigth title', sub_title: 'Domestic cattle belong to the genus Bos and the species taurus and indicus.', style: '', comp: [] },
         ]
     },
     {
@@ -88,12 +80,13 @@ const list = ref([
 ])
 
 const cloneDog = (element) => {
+    console.log(element);
     return {
         id: element.id + idGlobal++,
         name: element.name,
         component_name: element.component_name,
         details_com: element.details_com,
-        components: [...element.components]
+        components: []
     };
 }
 // const checkMove = (evt) => {

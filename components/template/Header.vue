@@ -1,7 +1,8 @@
 
 <template>
     <div class="flex justify-between items-center w-full">
-        <VueDraggableNext v-for="blog, i in blogs.details_com" :list="blogs.details_com" :key="i">
+        <!-- {{ tasks }} -->
+        <VueDraggableNext v-for="blog, i in tasks.details_com" :list="tasks.details_com" :key="i">
             <VueDraggableNext>
                 <div>
                     <h1 class="text-[35px] font-bold">{{ blog.title }}</h1>
@@ -21,7 +22,7 @@
 import { VueDraggableNext } from 'vue-draggable-next';
 
 const props = defineProps({
-    blogs: {
+    tasks: {
         type: Array,
         default: []
     }

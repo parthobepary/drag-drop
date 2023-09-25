@@ -6,7 +6,7 @@
         <VueDraggableNext @change="log" class="dragArea" tag="ul" :list="tasks" :group="{ name: 'task', components: [] }">
             <li v-for="el, idx in tasks" :key="el.name" class="px-2">
                 <div class="flex justify-between">
-                    <component :is="el.component_name" :blogs="el"/>
+                    <component :is="el.component_name" :tasks="el"/>
                     <!-- <div class="flex gap-3">
                         <button class="bg-red-500 text-white rounded-md px-1" @click="removeAt(idx)">X</button>
                         <button class="bg-red-500 text-white rounded-md px-1" @click="editAt(idx)">E</button>
