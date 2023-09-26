@@ -17,9 +17,10 @@
                     </ul>
                 </div>
             </div>
-            <div class="container mx-auto">
-                
-            </div>
         </section>
+        <!-- draggable & editor options -->
+        <div class="px-2">
+            <page-builder-page-maker />
+        </div>
     </div>
 </template>
