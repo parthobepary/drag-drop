@@ -3,15 +3,23 @@
         <div>
             <!-- <button>Edit mode</button> -->
         </div>
-        <VueDraggableNext @change="log" class="dragArea" tag="ul" :list="drafts" :group="{ name: 'task', components: [] }">
-            <li v-for="element, idx in drafts" :key="element.name" class="px-2">
-                    <component :is="element.component_name" :drafts="element">
-                        <div v-for="ele, i in element.components">
-                            <!-- <component :is="ele.component_name" :drafts="ele" /> -->
-                            <PageNested :drafts="element.components" />
-                        </div>
-                    </component>
-                    <!-- <PageNested :drafts="element.components" /> -->
+        <!-- <VueDraggableNext @change="log" class="dragArea" tag="ul" :list="drafts" :group="{ name: 'task', components: [] }">
+            <li v-for="el, idx in drafts" :key="el.name" class="px-2">
+                <component :is="el.component_name" :drafts="el">
+                    <VueDraggableNext @change="log" class="dragArea" tag="ul" :list="drafts" :group="{ name: 'task', components: [] }">                    
+                        <PageNested :drafts="el.components" />
+                    </VueDraggableNext>
+                </component>
+                <PageNested :drafts="el.components" />
+            </li>
+        </VueDraggableNext> -->
+        <VueDraggableNext class="dragArea" ghost-class="on-drag" @change="log" tag="ul" :list="drafts"
+            :group="{ name: 'task', components: [] }">
+            <li v-for="el, idx in drafts" :key="el.name" class="px-2">
+                <component :is="el.component_name" :drafts="el">
+                    <PageNested :drafts="el.components" />
+                </component>
+                <PageNested :drafts="el.components" />
             </li>
         </VueDraggableNext>
     </div>
@@ -21,13 +29,19 @@ import { VueDraggableNext } from 'vue-draggable-next';
 import PageNested from './PageNested.vue';
 import BodyContainer from './BodyContainer';
 import Header from './Header';
+import NavIteam from './NavIteam';
+import RoundLogo from './RoundLogo';
+import SquareLogo from './SquareLogo';
 
 export default {
     name: 'PageNested',
     components: {
         VueDraggableNext,
         BodyContainer,
-        Header
+        Header,
+        SquareLogo,
+        RoundLogo,
+        NavIteam
     },
     props: {
         drafts: {

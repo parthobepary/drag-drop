@@ -37,22 +37,38 @@ const blogs = ref([
         component_name: 'Header',
         props: {},
         components: []
+    },
+    {
+        id: 1,
+        name: 'Round Logo',
+        component_name: 'RoundLogo',
+        props: {},
+        components: []
+    },
+    {
+        id: 1,
+        name: 'sqr Logo',
+        component_name: 'SquareLogo',
+        props: {},
+        components: []
+    },
+    {
+        id: 1,
+        name: 'Nav item',
+        component_name: 'NavIteam',
+        props: {},
+        components: []
     }
 ]);
 
 
 const drafts = ref([
     {
-        id: 6, name: 'Body', component_name: 'BodyContainer', props: {
-            style: 'container mx-auto px-2 py-2 bg-red-100 min-h-96'
-        }, components: [
-            {
-                "id": 13,
-        "name": "Header",
-        "component_name": "Header",
-        "components": []
-            }
-        ]
+        id: 6, name: 'Body', component_name: 'BodyContainer',
+        props: {
+            style: 'container mx-auto px-2 py-2 bg-red-100 min-h-96 grid grd-cols-2'
+        },
+        components: []
     },
 ])
 

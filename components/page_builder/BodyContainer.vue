@@ -1,5 +1,5 @@
 <template>
-    <div :class="drafts.props.style">
+    <div :class="drafts.props.style" style="min-height: 10vh;">
         <slot />
     </div>
 </template>
