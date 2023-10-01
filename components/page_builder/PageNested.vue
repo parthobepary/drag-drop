@@ -6,23 +6,18 @@
         <!-- <VueDraggableNext @change="log" class="dragArea" tag="ul" :list="drafts" :group="{ name: 'task', components: [] }">
             <li v-for="el, idx in drafts" :key="el.name" class="px-2">
                 <component :is="el.component_name" :drafts="el">
-                    <VueDraggableNext @change="log" class="dragArea" tag="ul" :list="drafts" :group="{ name: 'task', components: [] }">                    
-                        <PageNested :drafts="el.components" />
-                    </VueDraggableNext>
+                   <PageNested :drafts="el.components" />
                 </component>
                 <PageNested :drafts="el.components" />
             </li>
         </VueDraggableNext> -->
-        <VueDraggableNext class="dragArea" ghost-class="on-drag" @change="log" tag="ul" :list="drafts"
-            :group="{ name: 'task', components: [] }">
-            <li v-for="el, idx in drafts" :key="el.name" class="px-2">
-                <component :is="el.component_name" :drafts="el"  class="bg-green-400">
-                    <PageNested :drafts="el.components" />
-                </component>
-              <div class="bg-blue-400">
-                <PageNested :drafts="el.components" />
-              </div>
-            </li>
+
+
+        <VueDraggableNext class="dragArea list-group w-full" :list="drafts" group="task" @change="log" :move="checkMove">
+            <div class="list-group-item bg-gray-300 m-1 p-3 rounded-md text-center" v-for="element in drafts"
+                :key="element.name">
+                <component :is="element.component_name" :drafts="element"></component>
+            </div>
         </VueDraggableNext>
     </div>
 </template>
