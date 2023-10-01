@@ -16,10 +16,12 @@
         <VueDraggableNext class="dragArea" ghost-class="on-drag" @change="log" tag="ul" :list="drafts"
             :group="{ name: 'task', components: [] }">
             <li v-for="el, idx in drafts" :key="el.name" class="px-2">
-                <component :is="el.component_name" :drafts="el">
+                <component :is="el.component_name" :drafts="el"  class="bg-green-400">
                     <PageNested :drafts="el.components" />
                 </component>
+              <div class="bg-blue-400">
                 <PageNested :drafts="el.components" />
+              </div>
             </li>
         </VueDraggableNext>
     </div>
