@@ -16,7 +16,17 @@
         <VueDraggableNext class="dragArea list-group w-full" :list="drafts" group="task" @change="log" :move="checkMove">
             <div class="list-group-item bg-gray-300 m-1 p-3 rounded-md text-center" v-for="element in drafts"
                 :key="element.name">
-                <component :is="element.component_name" :drafts="element"></component>
+                <component :is="element.component_name" :drafts="element">
+                    <div class="grid grid-cols-2">
+                        <div v-for="ele, i in element.components">
+                            <VueDraggableNext class="dragArea list-group w-full" :list="ele.components" group="task" @change="log" :move="checkMove">                        
+                                <PageNested :drafts="ele.components" />
+                            </VueDraggableNext>
+                            <!-- <PageNested :drafts="element.components" /> -->
+                        </div>
+                    </div>
+                    <!-- <PageNested :drafts="element.components"/> -->
+                </component>
             </div>
         </VueDraggableNext>
     </div>

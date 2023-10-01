@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-pink-200" style="min-height: 10vh;">
+    <div>
         <slot />
     </div>
 </template>

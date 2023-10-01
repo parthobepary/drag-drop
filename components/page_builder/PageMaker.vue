@@ -39,47 +39,62 @@ const blogs = ref([
         components: []
     },
     {
-        id: 1,
+        id: 2,
         name: 'Round Logo',
         component_name: 'RoundLogo',
         props: {},
         components: []
     },
     {
-        id: 1,
+        id: 3,
         name: 'sqr Logo',
         component_name: 'SquareLogo',
         props: {},
         components: []
     },
     {
-        id: 1,
+        id: 4,
         name: 'Nav item',
         component_name: 'NavIteam',
         props: {},
         components: []
+    },
+    {
+        id: 5,
+        name: 'Row container',
+        component_name: 'BodyContainer',
+        props: {},
+        components: [
+            {
+                id: 4,
+                name: 'Nav item',
+                component_name: 'NavIteam',
+                props: {},
+                components: []
+            },
+            {
+                id: 4,
+                name: 'Nav item',
+                component_name: 'NavIteam',
+                props: {},
+                components: []
+            }
+        ]
     }
 ]);
 
 
 const drafts = ref([
-    {
-        id: 6, name: 'Body', component_name: 'BodyContainer',
-        props: {
-            style: 'container mx-auto px-2 py-2 bg-red-100 min-h-96 grid grd-cols-2'
-        },
-        components: []
-    },
 ])
 
 const cloneDog = (element) => {
     console.log(element);
     return {
         id: element.id + idGlobal++,
-        name: element.name,
+        name: element.name + '4444',
         component_name: element.component_name,
-        details_com: element.details_com,
-        components: []
+        props: element.props,
+        components: element.components
     };
 }
 </script>
