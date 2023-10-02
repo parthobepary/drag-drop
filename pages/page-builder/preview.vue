@@ -1,5 +1,5 @@
 <template>
-    <div class="container mx-auto">
+    <div class="mx-auto">
         <section class="w-full px-8 text-gray-700 bg-[#F3F4F6]">
             <div class="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl">
                 <div class="relative flex flex-col md:flex-row">
@@ -17,7 +17,19 @@
                     </ul>
                 </div>
             </div>
+            <div class="container mx-auto">
+
+                <page-builder-page-review :drafts="drafts" />
+            </div>
         </section>
         <div class="container mx-auto"></div>
     </div>
 </template>
+
+<script setup>
+const drafts = ref([]);
+
+onMounted(() => {
+    drafts.value = JSON.parse(localStorage.getItem('drafts'))
+})
+</script>

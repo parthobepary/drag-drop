@@ -13,13 +13,12 @@
         </VueDraggableNext> -->
 
 
-        <VueDraggableNext class="dragArea list-group w-full" :list="drafts" group="task" @change="log" :move="checkMove">
-            <div class="list-group-item bg-gray-300 m-1 p-3 rounded-md text-center" v-for="element in drafts"
-                :key="element.name">
+        <VueDraggableNext class="dragArea list-group w-full" :list="drafts" group="task">
+            <div class="list-group-item px-1 text-center" v-for="(element, i) in drafts" :key="element.id + i">
                 <component :is="element.component_name" :drafts="element">
-                    <div class="grid grid-cols-2">
-                        <div v-for="ele, i in element.components">
-                            <VueDraggableNext class="dragArea list-group w-full" :list="ele.components" group="task" @change="log" :move="checkMove">                        
+                    <div :class="element.props.style">
+                        <div v-for="(ele, j) in element.components || []" :key="ele.id + j">
+                            <VueDraggableNext class="dragArea list-group w-full" :list="ele.components" group="task">
                                 <PageNested :drafts="ele.components" />
                             </VueDraggableNext>
                             <!-- <PageNested :drafts="element.components" /> -->
