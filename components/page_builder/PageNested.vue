@@ -13,19 +13,26 @@
         </VueDraggableNext> -->
 
 
-        <VueDraggableNext class="dragArea list-group w-full" :list="drafts" group="task">
-            <div class="list-group-item px-1 text-center" v-for="(element, i) in drafts" :key="element.id + i">
-                <component :is="element.component_name" :drafts="element">
-                    <div :class="element.props.style">
-                        <div v-for="(ele, j) in element.components || []" :key="ele.id + j">
-                            <VueDraggableNext class="dragArea list-group w-full" :list="ele.components" group="task">
-                                <PageNested :drafts="ele.components" />
-                            </VueDraggableNext>
-                            <!-- <PageNested :drafts="element.components" /> -->
+        <VueDraggableNext class="dragArea list-group mx-2" :list="drafts" group="task">
+            <div class="list-group-item px-1" v-for="(element, i) in drafts" :key="element.id + i">
+                <!-- <button @click="deleteBlogs(element.id)" class="bg-red-600 px-2 text-white rounded-md inline-block">X</button> -->
+                <div @click="editMode(element.id)">
+                    <component :is="element.component_name" :drafts="element">
+                        <div :class="element.props.classes.value">
+                            <div v-for="(ele, j) in element.components || []" :key="ele.id + j">
+                                <!-- <div>{{ ele.id }}</div> -->
+                                <VueDraggableNext class="dragArea list-group w-full my-5" :list="ele.components"
+                                    group="task">
+                                    <div @click="editMode(ele.id)">
+                                        <PageNested :drafts="ele.components" />
+                                    </div>
+                                </VueDraggableNext>
+                                <!-- <PageNested :drafts="element.components" /> -->
+                            </div>
                         </div>
-                    </div>
-                    <!-- <PageNested :drafts="element.components"/> -->
-                </component>
+                        <!-- <PageNested :drafts="element.components"/> -->
+                    </component>
+                </div>
             </div>
         </VueDraggableNext>
     </div>
@@ -56,12 +63,12 @@ export default {
         }
     },
     setup(props) {
-        const removeAt = (id) => {
+        const deleteBlogs = (id) => {
             console.log(id);
             props.drafts.splice(id, 1)
         }
 
-        const editAt = (id) => {
+        const editMode = (id) => {
             console.log(id);
         }
 
@@ -69,7 +76,7 @@ export default {
             console.log(event)
         };
 
-        return { log, removeAt, editAt }
+        return { log, deleteBlogs, editMode }
     }
 }
 

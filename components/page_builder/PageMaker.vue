@@ -21,7 +21,7 @@
             </div>
             <div class="col-span-1 bg-blue-200 w-full min-h-[100vh]">
                 <!-- Source code -->
-                <pre>{{ drafts }}</pre>
+                <PageSetting :drafts="drafts" />
             </div>
         </div>
     </div>
@@ -29,6 +29,7 @@
 <script setup>
 import { VueDraggableNext } from 'vue-draggable-next';
 import { v4 as uuidv4 } from "uuid";
+import PageSetting from './PageSetting.vue';
 
 // draggable js
 
@@ -38,7 +39,13 @@ const blogs = ref([
         id: uuidv4(),
         name: 'Header',
         component_name: 'Header',
-        props: {},
+        props: {
+            style: {
+                type: 'object',
+                default: {}
+            },
+
+        },
         components: []
     },
     {
@@ -66,7 +73,12 @@ const blogs = ref([
         id: uuidv4(),
         name: 'Row container',
         component_name: 'BodyContainer',
-        props: { style: 'grid grid-cols-2' },
+        props: {
+            classes: {
+                type: 'string',
+                value: 'grid grid-cols-2'
+            }
+        },
         components: [
             {
                 id: uuidv4(),
@@ -91,14 +103,15 @@ const drafts = ref([
 ])
 
 const cloneDog = (element) => {
-    console.log({
-        id: uuidv4(),
-        component_name: element.component_name,
-        props: element.props,
-        components: modifiedComponents(element.components)
-    });
+    // console.log({
+    //     id: uuidv4(),
+    //     component_name: element.component_name,
+    //     props: element.props,
+    //     components: modifiedComponents(element.components)
+    // });
     const json = {
         id: uuidv4(),
+        name: element.name,
         component_name: element.component_name,
         props: element.props,
         components: modifiedComponents(element.components)
