@@ -13,13 +13,17 @@
         </VueDraggableNext> -->
 
 
-        <VueDraggableNext class="dragArea list-group w-full" :list="drafts" group="task" @change="log" :move="checkMove">
-            <div class="list-group-item bg-gray-300 m-1 p-3 rounded-md text-center" v-for="element in drafts"
+        <VueDraggableNext class="dragArea list-group w-full p-2" :list="drafts" group="task" @change="log" :move="checkMove">
+            <div class="list-group-item  m-1 p-3 rounded-md text-center border-2 border-gray-400" v-for="element in drafts"
                 :key="element.name">
-                <component :is="element.component_name" :drafts="element">
+                <div  class="flex justify-between items-center pb-4">
+                  <button  @click="editAt(element)" class="bg-green-500 px-2 text-white">Edit</button>
+                  <button @click="removeAt()" class="px-2 text-white rounded-full bg-red-500">X</button>
+                </div>
+                <component :is="element.component_name" :drafts="element" >
                     <div class="grid grid-cols-2">
-                        <div v-for="ele, i in element.components">
-                            <VueDraggableNext class="dragArea list-group w-full" :list="ele.components" group="task" @change="log" :move="checkMove">                        
+                        <div v-for="(ele, i) in element.components" :key="i">
+                            <VueDraggableNext class="dragArea list-group w-full" :list="ele.components" group="task" @change="log" :move="checkMove">
                                 <PageNested :drafts="ele.components" />
                             </VueDraggableNext>
                             <!-- <PageNested :drafts="element.components" /> -->
@@ -64,15 +68,22 @@ export default {
 
         const editAt = (id) => {
             console.log(id);
+            const item = id.findIndex(item => item.id === props.drafts)
+            if(item !== -1){
+              prop
+            }
         }
 
         const log = (event) => {
             console.log(event)
         };
 
+
         return { log, removeAt, editAt }
     }
 }
+
+
 
 </script>
 <style scoped>

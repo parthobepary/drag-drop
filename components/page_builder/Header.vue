@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-between w-full">
+    <div class="flex justify-between w-full bg-red-300 p-4">
         <div><h1>Logo</h1></div>
         <div>
             <ul class="flex gap-x-4">
