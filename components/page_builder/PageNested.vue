@@ -13,17 +13,20 @@
         </VueDraggableNext> -->
 
 
-        <VueDraggableNext class="dragArea list-group mx-2" :list="drafts" group="task">
-            <div class="list-group-item px-1" v-for="(element, i) in drafts" :key="element.id + i">
-                <!-- <button @click="deleteBlogs(element.id)" class="bg-red-600 px-2 text-white rounded-md inline-block">X</button> -->
-                <div @click="editMode(element.id)">
+        <VueDraggableNext class=" list-group mx-2 ml-4" :list="drafts" group="task">
+            <div class="list-group-item px-1 relative" v-for="(element, i) in drafts" :key="element.id + i">
+                <button @click="editMode(element)"
+                    class="absolute top-4 -left-4 bg-red-700 px-2 text-white rounded-md inline-block">!</button>
+                <div>
                     <component :is="element.component_name" :drafts="element">
                         <div :class="element.props.classes.value">
                             <div v-for="(ele, j) in element.components || []" :key="ele.id + j">
                                 <!-- <div>{{ ele.id }}</div> -->
+                                <!-- <button @click="editMode(ele.id)"
+                                    class="bg-blue-600 px-2 text-white rounded-md inline-block">X</button> -->
                                 <VueDraggableNext class="dragArea list-group w-full my-5" :list="ele.components"
                                     group="task">
-                                    <div @click="editMode(ele.id)">
+                                    <div>
                                         <PageNested :drafts="ele.components" />
                                     </div>
                                 </VueDraggableNext>
@@ -45,6 +48,7 @@ import Header from './Header';
 import NavIteam from './NavIteam';
 import RoundLogo from './RoundLogo';
 import SquareLogo from './SquareLogo';
+import { ref } from 'vue'
 
 export default {
     name: 'PageNested',
@@ -62,21 +66,22 @@ export default {
             type: Array,
         }
     },
-    setup(props) {
+    setup(props, {emit}) {
+        const id = ref(null);
         const deleteBlogs = (id) => {
             console.log(id);
             props.drafts.splice(id, 1)
         }
 
-        const editMode = (id) => {
-            console.log(id);
+        const editMode = (element) => {
+            emit('editAble', element)
         }
 
         const log = (event) => {
             console.log(event)
         };
 
-        return { log, deleteBlogs, editMode }
+        return { log, deleteBlogs, editMode, id }
     }
 }
 
