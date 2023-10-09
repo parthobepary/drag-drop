@@ -13,7 +13,7 @@
             </div>
             <div class="col-span-3 bg-gray-200 w-full min-h-[100vh]">
                 <!-- Editor component -->
-                <PageBuilderPageNested :drafts="drafts" @editAble="editAble" />
+                <PageBuilderPageNested :drafts="drafts"/>
 
                 <div class="my-2 flex justify-end mr-1">
                     <button @click="saveData" class="bg-green-500 p-2 rounded-md text-white">Published</button>
@@ -21,7 +21,7 @@
             </div>
             <div v-if="drafts.length > 0" class="px-2 col-span-1 bg-blue-200 w-full min-h-[100vh]">
                 <!-- Source code -->
-                <PageSetting :editItem="editItem" :drafts="drafts" />
+                <PageSetting :drafts="drafts" />
             </div>
         </div>
     </div>
@@ -34,7 +34,6 @@ import PageSetting from './PageSetting.vue';
 // draggable js
 
 let idGlobal = 18;
-const editItem = ref(null)
 const blogs = ref([
     {
         id: uuidv4(),
@@ -146,10 +145,6 @@ const modifiedComponents = (ele) => {
     })
 }
 
-const editAble = (id) => {
-    console.log(id, 'helo');
-    editItem.value = id
-}
 const saveData = () => {
     localStorage.setItem('drafts', JSON.stringify(drafts.value))
 }

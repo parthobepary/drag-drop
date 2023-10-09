@@ -49,6 +49,7 @@ import NavIteam from './NavIteam';
 import RoundLogo from './RoundLogo';
 import SquareLogo from './SquareLogo';
 import { ref } from 'vue'
+import { useBlocksStore } from '../../stores/blocks'
 
 export default {
     name: 'PageNested',
@@ -68,13 +69,14 @@ export default {
     },
     setup(props, {emit}) {
         const id = ref(null);
+        const blocksStore = useBlocksStore()
         const deleteBlogs = (id) => {
             console.log(id);
             props.drafts.splice(id, 1)
         }
 
         const editMode = (element) => {
-            emit('editAble', element)
+            blocksStore.setBlocks(element)
         }
 
         const log = (event) => {
