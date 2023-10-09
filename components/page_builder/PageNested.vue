@@ -48,6 +48,7 @@ import Header from './Header';
 import NavIteam from './NavIteam';
 import RoundLogo from './RoundLogo';
 import SquareLogo from './SquareLogo';
+import HeroTxtCard from './HeroTxtCard';
 import { ref } from 'vue'
 import { useBlocksStore } from '../../stores/blocks'
 
@@ -59,7 +60,8 @@ export default {
         Header,
         SquareLogo,
         RoundLogo,
-        NavIteam
+        NavIteam,
+        HeroTxtCard
     },
     props: {
         drafts: {
@@ -76,6 +78,7 @@ export default {
         }
 
         const editMode = (element) => {
+
             blocksStore.setBlocks(element)
         }
 

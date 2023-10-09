@@ -20,6 +20,15 @@
             </div>
         </section>
 
+        <div class="grid grid-cols-1 md:grid-cols-2">
+            <div>
+                <page-builder-hero-txt-card />
+            </div>
+            <div>
+                <page-builder-hero-img-card />
+            </div>
+        </div>
+
         <!-- Hero -->
         <section class="px-2 pt-16 pb-32 bg-white md:px-0">
             <div class="container items-center max-w-6xl px-8 mx-auto xl:px-5">

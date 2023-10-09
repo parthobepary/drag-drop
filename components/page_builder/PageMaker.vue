@@ -13,7 +13,7 @@
             </div>
             <div class="col-span-3 bg-gray-200 w-full min-h-[100vh]">
                 <!-- Editor component -->
-                <PageBuilderPageNested :drafts="drafts"/>
+                <PageBuilderPageNested :drafts="drafts" />
 
                 <div class="my-2 flex justify-end mr-1">
                     <button @click="saveData" class="bg-green-500 p-2 rounded-md text-white">Published</button>
@@ -44,6 +44,10 @@ const blogs = ref([
                 type: 'string',
                 value: ''
             },
+            bg_color: {
+                type: 'string',
+                value: ''
+            },
             classes: {
                 type: 'string',
                 value: 'flex justify-between py-2 items-center'
@@ -55,7 +59,7 @@ const blogs = ref([
                     { name: 'Review', link: '/', classes: '' },
                 ]
             },
-            title:{
+            title: {
                 type: 'string',
                 value: 'Title',
             },
@@ -68,6 +72,36 @@ const blogs = ref([
         },
         components: []
     },
+
+    {
+        id: uuidv4(),
+        name: 'Hero Text',
+        component_name: 'HeroTxtCard',
+        props: {
+            style: {
+                type: 'string',
+                value: ''
+            },
+            bg_color: {
+                type: 'string',
+                value: ''
+            },
+            classes: {
+                type: 'string',
+                value: 'flex justify-between py-2 items-center'
+            },
+        },
+        components: [
+            {
+                id: uuidv4(),
+                name: 'Round Logo',
+                component_name: 'RoundLogo',
+                props: {},
+                components: []
+            },
+        ]
+    },
+
     {
         id: uuidv4(),
         name: 'Round Logo',
