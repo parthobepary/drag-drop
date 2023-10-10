@@ -24,9 +24,9 @@
                                 <!-- <div>{{ ele.id }}</div> -->
                                 <!-- <button @click="editMode(ele.id)"
                                     class="bg-blue-600 px-2 text-white rounded-md inline-block">X</button> -->
-                                <VueDraggableNext class="dragArea list-group w-full my-5" :list="ele.components"
+                                <VueDraggableNext class="dragArea list-group w-full my-5" :class="ele?.props?.classes?.value" :list="ele.components"
                                     group="task">
-                                    <div>
+                                    <div class="">
                                         <PageNested :drafts="ele.components" />
                                     </div>
                                 </VueDraggableNext>

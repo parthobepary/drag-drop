@@ -11,7 +11,7 @@
                         <div>Name</div>
                         <input class="mb-2 p-2" v-model="p.name" type="text" />
                         <div>Link</div>
-                        <input class="mb-2 p-2" v-model="p.link" type="text" />
+                        <input class="mb-2 p-2" v-model="p.value" type="text" />
                         <div>Classes</div>
                         <input class="mb-2 p-2" v-model="p.classes" type="text" />
                     </div>

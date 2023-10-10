@@ -55,8 +55,8 @@ const blogs = ref([
             navItems: {
                 type: 'array',
                 value: [
-                    { name: 'Home', link: '/', classes: '' },
-                    { name: 'Review', link: '/', classes: '' },
+                    { name: 'Home', value: '/', classes: '' },
+                    { name: 'Review', value: '/', classes: '' },
                 ]
             },
             title: {
@@ -88,14 +88,22 @@ const blogs = ref([
             },
             classes: {
                 type: 'string',
-                value: 'flex justify-between py-2 items-center'
+                value: ''
             },
+            elements:{
+                type: 'array',
+                value:[
+                { name: 'Here is heading', type:'text', classes: 'text-[34px] font-bold' },
+                { name: 'Here is your sub title. You can change it any time any more', type:'sub-text', classes: 'text-[2opx] font-bold' },
+                { name: 'Btn text', type:'button', classes: 'text-white bg-gray-600 px-12 py-2 rounded-md my-3' },
+                ]
+            }
         },
         components: [
             {
                 id: uuidv4(),
-                name: 'Round Logo',
-                component_name: 'RoundLogo',
+                name: 'Custom component',
+                component_name: 'CustomComponent',
                 props: {},
                 components: []
             },
@@ -138,14 +146,24 @@ const blogs = ref([
                 id: uuidv4(),
                 name: 'Left',
                 component_name: 'LeftComponent',
-                props: {},
+                props: {
+                    classes: {
+                        type: 'string',
+                        value: 'bg-blue-400'
+                    }
+                },
                 components: []
             },
             {
                 id: uuidv4(),
                 name: 'Right',
                 component_name: 'RightComponent',
-                props: {},
+                props: {
+                    classes: {
+                        type: 'string',
+                        value: 'bg-red-400'
+                    }
+                },
                 components: []
             }
         ]

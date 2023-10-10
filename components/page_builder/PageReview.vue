@@ -1,9 +1,9 @@
 <template>
     <div class="bg-white">
         <div>
-            <div class="list-group-item px-1 text-center" v-for="(element, i) in drafts" :key="element.id + i">
+            <div class="" v-for="(element, i) in drafts" :key="element.id + i">
                 <component :is="element.component_name" :drafts="element">
-                    <div :class="element.props.style">
+                    <div :class="element.props.classes.value">
                         <div v-for="(ele, j) in element.components || []" :key="ele.id + j">
                             <di>
                                 <PageReview :drafts="ele.components" />
@@ -22,6 +22,7 @@ import Header from './Header';
 import NavIteam from './NavIteam';
 import RoundLogo from './RoundLogo';
 import SquareLogo from './SquareLogo';
+import HeroTxtCard from './HeroTxtCard';
 
 export default {
     name: 'PageReview',
@@ -30,7 +31,8 @@ export default {
         Header,
         SquareLogo,
         RoundLogo,
-        NavIteam
+        NavIteam,
+        HeroTxtCard
     },
     props: {
         drafts: {

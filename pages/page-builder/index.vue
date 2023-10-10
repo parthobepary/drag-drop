@@ -21,10 +21,12 @@
         </section>
 
         <div class="grid grid-cols-1 md:grid-cols-2">
-            <div>
+            <div class="bg-red-300">
                 <page-builder-hero-txt-card />
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste cum quasi maxime, laudantium veritatis quam
+                    corporis consectetur ut est? Molestias!</p>
             </div>
-            <div>
+            <div class="bg-blue-300 h-full flex items-center">
                 <page-builder-hero-img-card />
             </div>
         </div>
@@ -446,9 +448,14 @@
                     <div class="w-full mt-16 md:mt-0 md:w-2/5">
                         <div
                             class="relative z-10 h-auto p-8 py-10 space-y-4 overflow-hidden bg-white border-b-2 border-gray-300 rounded-lg shadow-2xl px-7">
-                            <input type="text" name="text" class="border-2 border-red-100 py-2 rounded-md px-2  input-bordered text-lg w-full" placeholder="Name">
-                            <input type="text" name="email" class="border-2 border-red-100 py-2 rounded-md px-2 input input-bordered text-lg w-full" placeholder="Email">
-                            <input type="password" name="password" class="border-2 border-red-100 py-2 rounded-md px-2 input input-bordered text-lg w-full"
+                            <input type="text" name="text"
+                                class="border-2 border-red-100 py-2 rounded-md px-2  input-bordered text-lg w-full"
+                                placeholder="Name">
+                            <input type="text" name="email"
+                                class="border-2 border-red-100 py-2 rounded-md px-2 input input-bordered text-lg w-full"
+                                placeholder="Email">
+                            <input type="password" name="password"
+                                class="border-2 border-red-100 py-2 rounded-md px-2 input input-bordered text-lg w-full"
                                 placeholder="Password">
                             <div class="block">
                                 <button class="btn btn-primary btn-block">Create my account</button>
@@ -511,8 +518,7 @@
                 </span>
             </div>
         </section>
-    </div>
-</template>
+    </div></template>
 
 <script setup>
 </script>
