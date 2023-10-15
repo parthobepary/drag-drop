@@ -3,7 +3,7 @@
         <div>
             <div class="" v-for="(element, i) in drafts" :key="element.id + i">
                 <component :is="element.component_name" :drafts="element">
-                    <div :class="element.props.classes.value">
+                    <div :class="element?.props?.classes?.value">
                         <div v-for="(ele, j) in element.components || []" :key="ele.id + j">
                             <di>
                                 <PageReview :drafts="ele.components" />
@@ -23,6 +23,7 @@ import NavIteam from './NavIteam';
 import RoundLogo from './RoundLogo';
 import SquareLogo from './SquareLogo';
 import HeroTxtCard from './HeroTxtCard';
+import AwsamTemplete from './AwsamTemplete';
 
 export default {
     name: 'PageReview',
@@ -32,7 +33,8 @@ export default {
         SquareLogo,
         RoundLogo,
         NavIteam,
-        HeroTxtCard
+        HeroTxtCard,
+        AwsamTemplete
     },
     props: {
         drafts: {

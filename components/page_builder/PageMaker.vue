@@ -133,6 +133,13 @@ const blogs = ref([
     },
     {
         id: uuidv4(),
+        name: 'Template',
+        component_name: 'AwsamTemplete',
+        props: {},
+        components: []
+    },
+    {
+        id: uuidv4(),
         name: 'Row container',
         component_name: 'BodyContainer',
         props: {

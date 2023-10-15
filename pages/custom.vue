@@ -2,7 +2,6 @@
     <div>
         <p class="text-center">This is custom web page builder</p>
         <hr />
-
         <!-- grid -->
         <div>
             <div class="grid grid-cols-5">

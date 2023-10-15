@@ -44,6 +44,7 @@
 import { VueDraggableNext } from 'vue-draggable-next';
 import PageNested from './PageNested.vue';
 import BodyContainer from './BodyContainer';
+import AwsamTemplete from './AwsamTemplete';
 import Header from './Header';
 import NavIteam from './NavIteam';
 import RoundLogo from './RoundLogo';
@@ -61,7 +62,8 @@ export default {
         SquareLogo,
         RoundLogo,
         NavIteam,
-        HeroTxtCard
+        HeroTxtCard,
+        AwsamTemplete
     },
     props: {
         drafts: {
