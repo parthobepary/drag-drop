@@ -18,19 +18,12 @@
                 <button @click="editMode(element)"
                     class="absolute top-4 -left-4 bg-red-700 px-2 text-white rounded-md inline-block">!</button>
                 <div>
-                    <component :is="element?.component_name" :drafts="element">
-                        <div :class="element?.props?.classes?.value" class="">
-                            <div v-for="(ele, j) in element?.components || []" :key="ele.id + j" class="my-4">
-                                <VueDraggableNext class="dragArea list-group w-full" :class="ele?.props?.classes?.value"
-                                    :list="ele?.components" group="task">
-                                    <div class="grid grid-cols-2 items-center">
-                                        <div class="" v-for="(item, index) in ele.components" :key="index">
-                                            <VueDraggableNext class="dragArea list-group w-full" :list="item?.components"
-                                                group="task">
-                                                <component :is="item.component_name"></component>
-                                                <PageNested :drafts="item?.components" />
-                                            </VueDraggableNext>
-                                        </div>
+                    <component :is="element.component_name" :drafts="element">
+                        <div :class="element?.props?.classes?.value">
+                            <div v-for="(ele, j) in element.components || []" :key="ele.id + j">
+                                <VueDraggableNext class="dragArea list-group w-full my-5" :class="ele?.props?.classes?.value" :list="ele.components" group="task">
+                                    <div>
+                                        <PageNested :drafts="ele.components" />
                                     </div>
                                 </VueDraggableNext>
                                 <!-- <PageNested :drafts="element.components" /> -->
@@ -47,20 +40,13 @@
 import { VueDraggableNext } from 'vue-draggable-next';
 import PageNested from './PageNested.vue';
 import BodyContainer from './BodyContainer';
-import AwsamTemplete from './AwsamTemplete';
 import Header from './Header';
 import NavIteam from './NavIteam';
 import RoundLogo from './RoundLogo';
-import SquareLogo from './SquareLogo';
+import TemplateHeaderNavItems from './TemplateHeaderNavItems';
+import TemplateHeaderLogo from './TemplateHeaderLogo';
 import HeroTxtCard from './HeroTxtCard';
-
-//template components
-import TemplateHeaderLogo from './TemplateHeaderLogo.vue';
-import TemplateHeaderNavItems from './TemplateHeaderNavItems.vue';
-import TemplateBannerImage from './TemplateBannerImage.vue';
-import TemplateBannerText from './TemplateBannerText.vue';
-import TemplateFaq from './TemplateFaq.vue';
-
+import SquareLogo from './SquareLogo';
 import { ref } from 'vue'
 import { useBlocksStore } from '../../stores/blocks'
 
@@ -74,12 +60,8 @@ export default {
         RoundLogo,
         NavIteam,
         HeroTxtCard,
-        AwsamTemplete,
-        TemplateHeaderLogo,
         TemplateHeaderNavItems,
-        TemplateBannerImage,
-        TemplateBannerText,
-        TemplateFaq
+        TemplateHeaderLogo,
     },
     props: {
         drafts: {

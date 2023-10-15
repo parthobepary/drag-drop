@@ -23,6 +23,8 @@ import NavIteam from './NavIteam';
 import RoundLogo from './RoundLogo';
 import SquareLogo from './SquareLogo';
 import HeroTxtCard from './HeroTxtCard';
+import TemplateHeaderNavItems from './TemplateHeaderNavItems';
+import TemplateHeaderLogo from './TemplateHeaderLogo';
 import AwsamTemplete from './AwsamTemplete';
 
 export default {
@@ -34,7 +36,9 @@ export default {
         RoundLogo,
         NavIteam,
         HeroTxtCard,
-        AwsamTemplete
+        AwsamTemplete,
+        TemplateHeaderLogo,
+        TemplateHeaderNavItems
     },
     props: {
         drafts: {

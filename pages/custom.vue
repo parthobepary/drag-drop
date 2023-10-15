@@ -37,39 +37,39 @@ import { VueDraggableNext } from 'vue-draggable-next';
 
 const enabled = true;
 let idGlobal = 8;
-const blogs = ref([
-    {
-        id: 1, name: 'Header', component_name: 'Header', components: [], details_com: [
-            { id: 21_1, title: 'Logo', style: '' },
-            {
-                naves: [
-                    { id: 22_1, item: 'Home', style: '' },
-                    { id: 23_1, item: 'Blogs', style: '' },
-                    { id: 24_1, item: 'Contact', style: '' },
-                    { id: 25_1, item: 'About', style: '' },
-                ]
-            }
-        ]
-    },
-    {
-        id: 2, name: 'Footer', component_name: 'Footer', components: [], details_com: []
-    },
-    {
-        id: 3, name: 'Grid', component_name: 'GridTwoCol', components: [], details_com: [
-            { id: 26_1, title: 'This is left title', sub_title: 'Domestic cattle belong to the genus Bos and the species taurus and indicus.', style: '', comp: [{ component_name: 'Footer' }] },
-            { id: 27_1, title: 'This is rigth title', sub_title: 'Domestic cattle belong to the genus Bos and the species taurus and indicus.', style: '', comp: [] },
-        ]
-    },
-    {
-        id: 4, name: 'Card', component_name: 'Card', components: [], details_com: []
-    },
-    {
-        id: 5, name: 'Image', component_name: 'Image', components: [], details_com: []
-    },
-    {
-        id: 6, name: 'Button', component_name: 'Button', components: [], details_com: []
-    },
-]);
+// const blogs = ref([
+//     {
+//         id: 1, name: 'Header', component_name: 'Header', components: [], details_com: [
+//             { id: 21_1, title: 'Logo', style: '' },
+//             {
+//                 naves: [
+//                     { id: 22_1, item: 'Home', style: '' },
+//                     { id: 23_1, item: 'Blogs', style: '' },
+//                     { id: 24_1, item: 'Contact', style: '' },
+//                     { id: 25_1, item: 'About', style: '' },
+//                 ]
+//             }
+//         ]
+//     },
+//     {
+//         id: 2, name: 'Footer', component_name: 'Footer', components: [], details_com: []
+//     },
+//     {
+//         id: 3, name: 'Grid', component_name: 'GridTwoCol', components: [], details_com: [
+//             { id: 26_1, title: 'This is left title', sub_title: 'Domestic cattle belong to the genus Bos and the species taurus and indicus.', style: '', comp: [{ component_name: 'Footer' }] },
+//             { id: 27_1, title: 'This is rigth title', sub_title: 'Domestic cattle belong to the genus Bos and the species taurus and indicus.', style: '', comp: [] },
+//         ]
+//     },
+//     {
+//         id: 4, name: 'Card', component_name: 'Card', components: [], details_com: []
+//     },
+//     {
+//         id: 5, name: 'Image', component_name: 'Image', components: [], details_com: []
+//     },
+//     {
+//         id: 6, name: 'Button', component_name: 'Button', components: [], details_com: []
+//     },
+// ]);
 
 
 const list = ref([

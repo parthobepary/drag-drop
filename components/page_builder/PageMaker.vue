@@ -131,88 +131,131 @@ const blogs = ref([
         props: {},
         components: []
     },
+
     {
         id: uuidv4(),
-        name: 'Template',
-        component_name: 'AwsamTemplete',
+        name: "Row container",
+        component_name: "BodyContainer",
         props: {
-            bg_color: {
-                type: 'string',
-                value: 'white'
-            },
+            classes: {
+                type: "string",
+                value: ""
+            }
         },
         components: [
             {
                 id: uuidv4(),
-                name: 'Header',
-                component_name: 'Header',
+                name: "Left",
+                component_name: "LeftComponent",
                 props: {
                     classes: {
-                        type: 'string',
-                        value: ''
+                        type: "string",
+                        value: "bg-blue-400"
                     }
                 },
                 components: [
                     {
                         id: uuidv4(),
-                        name: 'Header logo',
-                        component_name: 'TemplateHeaderLogo',
-                        props: {},
-                        components: []
-                    },
-                    {
-                        id: uuidv4(),
-                        name: 'Header text',
-                        component_name: 'TemplateHeaderNavItems',
-                        props: {},
-                        components: []
+                        name: "Row container",
+                        component_name: "BodyContainer",
+                        props: {
+                            classes: {
+                                type: "string",
+                                value: "flex justify-between items-center"
+                            }
+                        },
+                        components: [
+                            {
+                                id: uuidv4(),
+                                name: "Right",
+                                component_name: "RightComponent",
+                                props: {
+                                    classes: {
+                                        type: "string",
+                                        value: ""
+                                    }
+                                },
+                                components: [
+                                    {
+                                        id: uuidv4(),
+                                        name: "Nav item",
+                                        component_name: "TemplateHeaderLogo",
+                                        props: {},
+                                        components: []
+                                    }
+                                ]
+                            },
+                            {
+                                id: uuidv4(),
+                                name: "Right",
+                                component_name: "RightComponent",
+                                props: {
+                                    classes: {
+                                        type: "string",
+                                        value: ""
+                                    }
+                                },
+                                components: [
+                                    {
+                                        id: uuidv4(),
+                                        name: "Nav item",
+                                        component_name: "TemplateHeaderNavItems",
+                                        props: {},
+                                        components: []
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ]
             },
             {
                 id: uuidv4(),
-                name: 'Banner',
-                component_name: 'banner',
+                name: "Right",
+                component_name: "RightComponent",
                 props: {
                     classes: {
-                        type: 'string',
-                        value: ''
+                        type: "string",
+                        value: "bg-red-400"
                     }
                 },
                 components: [
                     {
                         id: uuidv4(),
-                        name: 'Banner image',
-                        component_name: 'TemplateBannerImage',
-                        props: {},
-                        components: []
-                    },
-                    {
-                        id: uuidv4(),
-                        name: 'Banner text',
-                        component_name: 'TemplateBannerText',
-                        props: {},
-                        components: []
-                    }
-                ]
-            },
-            {
-                id: uuidv4(),
-                name: 'Banner',
-                component_name: 'banner',
-                props: {
-                    classes: {
-                        type: 'string',
-                        value: ''
-                    }
-                },
-                components: [
-                    {
-                        id: uuidv4(),
-                        name: 'Template Faq ',
-                        component_name: 'TemplateFaq',
-                        props: {},
-                        components: []
+                        name: "Row container",
+                        component_name: "BodyContainer",
+                        props: {
+                            classes: {
+                                type: "string",
+                                value: ""
+                            }
+                        },
+                        components: [
+                            {
+                                id: uuidv4(),
+                                name: "Left",
+                                component_name: "LeftComponent",
+                                props: {
+                                    classes: {
+                                        type: "string",
+                                        value: "bg-blue-400"
+                                    }
+                                },
+                                components: []
+                            },
+                            {
+                                id: uuidv4(),
+                                name: "Right",
+                                component_name: "RightComponent",
+                                props: {
+                                    classes: {
+                                        type: "string",
+                                        value: "bg-red-400"
+                                    }
+                                },
+                                components: []
+                            }
+                        ]
                     }
                 ]
             }
@@ -220,12 +263,12 @@ const blogs = ref([
     },
     {
         id: uuidv4(),
-        name: 'Row container',
+        name: 'Template',
         component_name: 'BodyContainer',
         props: {
             classes: {
                 type: 'string',
-                value: 'grid grid-cols-2'
+                value: 'bg-red-500 px-2 grid grid-cols-2'
             }
         },
         components: [
@@ -236,7 +279,7 @@ const blogs = ref([
                 props: {
                     classes: {
                         type: 'string',
-                        value: 'bg-blue-400'
+                        value: 'bg-blue-200 px-4 grid grid-cols-2'
                     }
                 },
                 components: []
@@ -248,7 +291,7 @@ const blogs = ref([
                 props: {
                     classes: {
                         type: 'string',
-                        value: 'bg-red-400'
+                        value: ''
                     }
                 },
                 components: []
