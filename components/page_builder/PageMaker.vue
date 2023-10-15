@@ -90,12 +90,12 @@ const blogs = ref([
                 type: 'string',
                 value: ''
             },
-            elements:{
+            elements: {
                 type: 'array',
-                value:[
-                { name: 'Here is heading', type:'text', classes: 'text-[34px] font-bold' },
-                { name: 'Here is your sub title. You can change it any time any more', type:'sub-text', classes: 'text-[2opx] font-bold' },
-                { name: 'Btn text', type:'button', classes: 'text-white bg-gray-600 px-12 py-2 rounded-md my-3' },
+                value: [
+                    { name: 'Here is heading', type: 'text', classes: 'text-[34px] font-bold' },
+                    { name: 'Here is your sub title. You can change it any time any more', type: 'sub-text', classes: 'text-[2opx] font-bold' },
+                    { name: 'Btn text', type: 'button', classes: 'text-white bg-gray-600 px-12 py-2 rounded-md my-3' },
                 ]
             }
         },
@@ -135,8 +135,88 @@ const blogs = ref([
         id: uuidv4(),
         name: 'Template',
         component_name: 'AwsamTemplete',
-        props: {},
-        components: []
+        props: {
+            bg_color: {
+                type: 'string',
+                value: 'white'
+            },
+        },
+        components: [
+            {
+                id: uuidv4(),
+                name: 'Header',
+                component_name: 'Header',
+                props: {
+                    classes: {
+                        type: 'string',
+                        value: ''
+                    }
+                },
+                components: [
+                    {
+                        id: uuidv4(),
+                        name: 'Header logo',
+                        component_name: 'TemplateHeaderLogo',
+                        props: {},
+                        components: []
+                    },
+                    {
+                        id: uuidv4(),
+                        name: 'Header text',
+                        component_name: 'TemplateHeaderNavItems',
+                        props: {},
+                        components: []
+                    }
+                ]
+            },
+            {
+                id: uuidv4(),
+                name: 'Banner',
+                component_name: 'banner',
+                props: {
+                    classes: {
+                        type: 'string',
+                        value: ''
+                    }
+                },
+                components: [
+                    {
+                        id: uuidv4(),
+                        name: 'Banner image',
+                        component_name: 'TemplateBannerImage',
+                        props: {},
+                        components: []
+                    },
+                    {
+                        id: uuidv4(),
+                        name: 'Banner text',
+                        component_name: 'TemplateBannerText',
+                        props: {},
+                        components: []
+                    }
+                ]
+            },
+            {
+                id: uuidv4(),
+                name: 'Banner',
+                component_name: 'banner',
+                props: {
+                    classes: {
+                        type: 'string',
+                        value: ''
+                    }
+                },
+                components: [
+                    {
+                        id: uuidv4(),
+                        name: 'Template Faq ',
+                        component_name: 'TemplateFaq',
+                        props: {},
+                        components: []
+                    }
+                ]
+            }
+        ]
     },
     {
         id: uuidv4(),

@@ -32,6 +32,9 @@ const props = defineProps({
 });
 const target = ref('element');
 const deleteBlogs = (id) => {
-    props.drafts.splice(id, 1)
+    const removeIndex = props.drafts.findIndex((el) => el.id === id)
+    if (removeIndex === -1)
+        return 'Item not found'
+    else props.drafts.splice(removeIndex, 1)
 }
 </script>

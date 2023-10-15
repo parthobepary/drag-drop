@@ -18,16 +18,19 @@
                 <button @click="editMode(element)"
                     class="absolute top-4 -left-4 bg-red-700 px-2 text-white rounded-md inline-block">!</button>
                 <div>
-                    <component :is="element.component_name" :drafts="element">
-                        <div :class="element.props.classes.value">
-                            <div v-for="(ele, j) in element.components || []" :key="ele.id + j">
-                                <!-- <div>{{ ele.id }}</div> -->
-                                <!-- <button @click="editMode(ele.id)"
-                                    class="bg-blue-600 px-2 text-white rounded-md inline-block">X</button> -->
-                                <VueDraggableNext class="dragArea list-group w-full my-5" :class="ele?.props?.classes?.value" :list="ele.components"
-                                    group="task">
-                                    <div class="">
-                                        <PageNested :drafts="ele.components" />
+                    <component :is="element?.component_name" :drafts="element">
+                        <div :class="element?.props?.classes?.value" class="">
+                            <div v-for="(ele, j) in element?.components || []" :key="ele.id + j" class="my-4">
+                                <VueDraggableNext class="dragArea list-group w-full" :class="ele?.props?.classes?.value"
+                                    :list="ele?.components" group="task">
+                                    <div class="grid grid-cols-2 items-center">
+                                        <div class="" v-for="(item, index) in ele.components" :key="index">
+                                            <VueDraggableNext class="dragArea list-group w-full" :list="item?.components"
+                                                group="task">
+                                                <component :is="item.component_name"></component>
+                                                <PageNested :drafts="item?.components" />
+                                            </VueDraggableNext>
+                                        </div>
                                     </div>
                                 </VueDraggableNext>
                                 <!-- <PageNested :drafts="element.components" /> -->
@@ -50,6 +53,14 @@ import NavIteam from './NavIteam';
 import RoundLogo from './RoundLogo';
 import SquareLogo from './SquareLogo';
 import HeroTxtCard from './HeroTxtCard';
+
+//template components
+import TemplateHeaderLogo from './TemplateHeaderLogo.vue';
+import TemplateHeaderNavItems from './TemplateHeaderNavItems.vue';
+import TemplateBannerImage from './TemplateBannerImage.vue';
+import TemplateBannerText from './TemplateBannerText.vue';
+import TemplateFaq from './TemplateFaq.vue';
+
 import { ref } from 'vue'
 import { useBlocksStore } from '../../stores/blocks'
 
@@ -63,7 +74,12 @@ export default {
         RoundLogo,
         NavIteam,
         HeroTxtCard,
-        AwsamTemplete
+        AwsamTemplete,
+        TemplateHeaderLogo,
+        TemplateHeaderNavItems,
+        TemplateBannerImage,
+        TemplateBannerText,
+        TemplateFaq
     },
     props: {
         drafts: {
@@ -71,7 +87,7 @@ export default {
             type: Array,
         }
     },
-    setup(props, {emit}) {
+    setup(props, { emit }) {
         const id = ref(null);
         const blocksStore = useBlocksStore()
         const deleteBlogs = (id) => {

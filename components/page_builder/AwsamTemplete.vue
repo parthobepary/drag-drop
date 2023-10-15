@@ -1,20 +1,26 @@
 <template>
-    <section>
-        <!-- header section -->
-        <PageBuilderTemplateHeader />
-        <!-- banner section -->
+    <section :style="`background:${drafts.props.bg_color.value}`">
+        <!-- <PageBuilderTemplateHeader />
         <PageBuilderTemplateBanner />
-        <!-- faq section -->
         <PageBuilderTemplateFaq />
-        <!-- adds section -->
         <PageBuilderTemplateAdds />
-        <!-- card section -->
         <PageBuilderTemplateCard />
-        <!-- footer section -->
-        <PageBuilderTemplateFooter />
+        <PageBuilderTemplateFooter /> -->
+        <!-- {{ drafts.components }} -->
+        <div>
+            <slot />
+        </div>
     </section>
 </template>
-<script setup></script>
+<script setup>
+const props = defineProps({
+    drafts: {
+        type: Object,
+        default: {}
+    },
+
+})
+</script>
 <style>
 li {
     text-decoration: none;
