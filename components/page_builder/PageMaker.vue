@@ -35,103 +35,7 @@ import PageSetting from './PageSetting.vue';
 
 let idGlobal = 18;
 const blogs = ref([
-    {
-        id: uuidv4(),
-        name: 'Header',
-        component_name: 'Header',
-        props: {
-            style: {
-                type: 'string',
-                value: ''
-            },
-            bg_color: {
-                type: 'string',
-                value: ''
-            },
-            classes: {
-                type: 'string',
-                value: 'flex justify-between py-2 items-center'
-            },
-            navItems: {
-                type: 'array',
-                value: [
-                    { name: 'Home', value: '/', classes: '' },
-                    { name: 'Review', value: '/', classes: '' },
-                ]
-            },
-            title: {
-                type: 'string',
-                value: 'Title',
-            },
-
-            logo: {
-                type: 'image',
-                value: 'Logo',
-            }
-
-        },
-        components: []
-    },
-
-    {
-        id: uuidv4(),
-        name: 'Hero Text',
-        component_name: 'HeroTxtCard',
-        props: {
-            style: {
-                type: 'string',
-                value: ''
-            },
-            bg_color: {
-                type: 'string',
-                value: ''
-            },
-            classes: {
-                type: 'string',
-                value: ''
-            },
-            elements: {
-                type: 'array',
-                value: [
-                    { name: 'Here is heading', type: 'text', classes: 'text-[34px] font-bold' },
-                    { name: 'Here is your sub title. You can change it any time any more', type: 'sub-text', classes: 'text-[2opx] font-bold' },
-                    { name: 'Btn text', type: 'button', classes: 'text-white bg-gray-600 px-12 py-2 rounded-md my-3' },
-                ]
-            }
-        },
-        components: [
-            {
-                id: uuidv4(),
-                name: 'Custom component',
-                component_name: 'CustomComponent',
-                props: {},
-                components: []
-            },
-        ]
-    },
-
-    {
-        id: uuidv4(),
-        name: 'Round Logo',
-        component_name: 'RoundLogo',
-        props: {},
-        components: []
-    },
-    {
-        id: uuidv4(),
-        name: 'sqr Logo',
-        component_name: 'SquareLogo',
-        props: {},
-        components: []
-    },
-    {
-        id: uuidv4(),
-        name: 'Nav item',
-        component_name: 'NavIteam',
-        props: {},
-        components: []
-    },
-
+    // our templates
     {
         id: uuidv4(),
         name: "Awesome landing page",
@@ -468,6 +372,149 @@ const blogs = ref([
             }
         ]
     },
+
+    // our ready component blocks
+    //nav bar
+    {
+        id: uuidv4(),
+        name: 'Stylist nav bar',
+        component_name: 'Navbar',
+        props: {
+            style: {
+                type: 'string',
+                value: ''
+            },
+            bg_color: {
+                type: 'string',
+                value: ''
+            },
+            classes: {
+                type: 'string',
+                value: 'flex justify-between py-2 items-center'
+            },
+            navItems: {
+                type: 'array',
+                value: [
+                    { name: 'Home', value: '/', classes: '' },
+                    { name: 'Review', value: '/', classes: '' },
+                ]
+            },
+            title: {
+                type: 'string',
+                value: 'Title',
+            },
+
+            logo: {
+                type: 'image',
+                value: 'Logo',
+            }
+
+        },
+        components: []
+    },
+    // text component
+    {
+        id: uuidv4(),
+        name: 'Text card',
+        component_name: 'TextComponent',
+        props: {
+            style: {
+                type: 'string',
+                value: ''
+            },
+            bg_color: {
+                type: 'string',
+                value: ''
+            },
+            classes: {
+                type: 'string',
+                value: ''
+            },
+            elements: {
+                type: 'array',
+                value: [
+                    { name: 'Here is heading', type: 'text', classes: 'text-[34px] font-bold' },
+                    { name: 'Here is your sub title. You can change it any time any more', type: 'sub-text', classes: 'text-[2opx] font-bold' },
+                    { name: 'Btn text', type: 'button', classes: 'text-white bg-gray-600 px-12 py-2 rounded-md my-3' },
+                ]
+            }
+        },
+        components: [
+            {
+                id: uuidv4(),
+                name: 'Custom component',
+                component_name: 'CustomComponent',
+                props: {},
+                components: []
+            },
+        ]
+    },
+
+    {
+        id: uuidv4(),
+        name: 'Navigation title',
+        component_name: 'NavigationTitle',
+        props: {},
+        components: []
+    },
+    {
+        id: uuidv4(),
+        name: 'Navigation item',
+        component_name: 'NavigationItems',
+        props: {},
+        components: []
+    },
+    {
+        id: uuidv4(),
+        name: 'Fence Button',
+        component_name: 'FenceButton',
+        props: {
+            style: {
+                type: 'string',
+                value: 'display: flex; justify-content: start;'
+            },
+            classes: {
+                type: 'string',
+                value: 'bg-green-400 text-white px-8 py-2 rounded-md'
+            },
+            button_text: {
+                type: 'string',
+                value: 'Change your button text'
+            },
+            to: {
+                type: 'string',
+                value: '/'
+            },
+        },
+        components: []
+    },
+    // single column component
+    {
+        id: uuidv4(),
+        name: 'One column Component',
+        component_name: 'BodyContainer',
+        props: {
+            classes: {
+                type: 'string',
+                value: ''
+            }
+        },
+        components: [
+            {
+                id: uuidv4(),
+                name: 'Left',
+                component_name: 'LeftComponent',
+                props: {
+                    classes: {
+                        type: 'string',
+                        value: ''
+                    }
+                },
+                components: []
+            },
+        ]
+    },
+    // Two column component
     {
         id: uuidv4(),
         name: 'Two column Component',

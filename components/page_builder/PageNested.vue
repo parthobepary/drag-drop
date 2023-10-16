@@ -21,7 +21,8 @@
                     <component :is="element.component_name" :drafts="element">
                         <div :class="element?.props?.classes?.value">
                             <div v-for="(ele, j) in element.components || []" :key="ele.id + j">
-                                <VueDraggableNext class="dragArea list-group w-full my-5" :class="ele?.props?.classes?.value" :list="ele.components" group="task">
+                                <VueDraggableNext class="dragArea list-group w-full my-5"
+                                    :class="ele?.props?.classes?.value" :list="ele.components" group="task">
                                     <div>
                                         <PageNested :drafts="ele.components" />
                                     </div>
@@ -40,9 +41,10 @@
 import { VueDraggableNext } from 'vue-draggable-next';
 import PageNested from './PageNested.vue';
 import BodyContainer from './BodyContainer';
-import Header from './Header';
-import NavIteam from './NavIteam';
-import RoundLogo from './RoundLogo';
+import Navbar from './Navbar';
+import NavigationTitle from './NavigationTitle';
+import NavigationItems from './NavigationItems';
+import FenceButton from './FenceButton';
 import TemplateHeaderNavItems from './TemplateHeaderNavItems';
 import TemplateHeaderLogo from './TemplateHeaderLogo';
 import TemplateFooter from './TemplateFooter';
@@ -52,7 +54,7 @@ import TemplateAdds from './TemplateAdds';
 import TemplateCard from './TemplateCard';
 import TemplateFaq from './TemplateFaq';
 
-import HeroTxtCard from './HeroTxtCard';
+import TextComponent from './TextComponent';
 import SquareLogo from './SquareLogo';
 import { ref } from 'vue'
 import { useBlocksStore } from '../../stores/blocks'
@@ -62,11 +64,11 @@ export default {
     components: {
         VueDraggableNext,
         BodyContainer,
-        Header,
+        Navbar,
         SquareLogo,
-        RoundLogo,
-        NavIteam,
-        HeroTxtCard,
+        NavigationItems,
+        NavigationTitle,
+        TextComponent,
         TemplateHeaderNavItems,
         TemplateHeaderLogo,
         TemplateFooter,
@@ -74,7 +76,8 @@ export default {
         TemplateBannerText,
         TemplateCard,
         TemplateFaq,
-        TemplateAdds
+        TemplateAdds,
+        FenceButton
     },
     props: {
         drafts: {
