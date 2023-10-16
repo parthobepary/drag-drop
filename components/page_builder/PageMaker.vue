@@ -395,8 +395,8 @@ const blogs = ref([
             navItems: {
                 type: 'array',
                 value: [
-                    { id:uuidv4(), name: 'Home', value: '/', classes: 'font-bold' },
-                    { id:uuidv4(), name: 'Review', value: '/', classes: 'font-bold' },
+                    { id: uuidv4(), name: 'Home', value: '/', classes: 'font-bold' },
+                    { id: uuidv4(), name: 'Review', value: '/', classes: 'font-bold' },
                 ]
             },
             nav_title: {
@@ -457,11 +457,38 @@ const blogs = ref([
         ]
     },
 
+    // navigation title
+
     {
         id: uuidv4(),
         name: 'Navigation title',
         component_name: 'NavigationTitle',
-        props: {},
+        props: {
+            style: {
+                type: 'string',
+                value: ''
+            },
+            classes: {
+                type: 'string',
+                value: 'flex justify-between py-2 items-center'
+            },
+            nav_title: {
+                type: 'string',
+                value: 'Awesome',
+            },
+            nav_title_classes: {
+                type: 'string',
+                value: 'text-[26px] font-bold',
+            },
+            sub_nav_title: {
+                type: 'string',
+                value: '.nav',
+            },
+            nav_sub_title_classes: {
+                type: 'string',
+                value: 'text-[18px] text-pink-500',
+            },
+        },
         components: []
     },
     {
