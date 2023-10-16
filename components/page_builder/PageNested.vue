@@ -45,6 +45,13 @@ import NavIteam from './NavIteam';
 import RoundLogo from './RoundLogo';
 import TemplateHeaderNavItems from './TemplateHeaderNavItems';
 import TemplateHeaderLogo from './TemplateHeaderLogo';
+import TemplateFooter from './TemplateFooter';
+import TemplateBannerImage from './TemplateBannerImage';
+import TemplateBannerText from './TemplateBannerText';
+import TemplateAdds from './TemplateAdds';
+import TemplateCard from './TemplateCard';
+import TemplateFaq from './TemplateFaq';
+
 import HeroTxtCard from './HeroTxtCard';
 import SquareLogo from './SquareLogo';
 import { ref } from 'vue'
@@ -62,6 +69,12 @@ export default {
         HeroTxtCard,
         TemplateHeaderNavItems,
         TemplateHeaderLogo,
+        TemplateFooter,
+        TemplateBannerImage,
+        TemplateBannerText,
+        TemplateCard,
+        TemplateFaq,
+        TemplateAdds
     },
     props: {
         drafts: {

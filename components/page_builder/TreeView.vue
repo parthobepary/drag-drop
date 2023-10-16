@@ -1,9 +1,9 @@
 <template>
     <div>
         <div>
-            <pre>{{drafts}}</pre>
+            <!-- <pre>{{drafts}}</pre> -->
             <!-- show data -->
-            <!-- <div>
+            <div>
                 <VueDraggableNext class="dragArea list-group mx-2" :list="drafts" group="task">
                     <div class="list-group-item px-1" v-for="(element, i) in drafts" :key="element.id + i">
                         <div class="flex gap-x-2">
@@ -18,7 +18,7 @@
                         </div>
                     </div>
                 </VueDraggableNext>
-            </div> -->
+            </div>
         </div>
     </div>
 </template>

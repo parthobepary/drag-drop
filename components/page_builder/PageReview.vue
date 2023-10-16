@@ -25,6 +25,12 @@ import SquareLogo from './SquareLogo';
 import HeroTxtCard from './HeroTxtCard';
 import TemplateHeaderNavItems from './TemplateHeaderNavItems';
 import TemplateHeaderLogo from './TemplateHeaderLogo';
+import TemplateFooter from './TemplateFooter';
+import TemplateBannerImage from './TemplateBannerImage';
+import TemplateBannerText from './TemplateBannerText';
+import TemplateAdds from './TemplateAdds';
+import TemplateCard from './TemplateCard';
+import TemplateFaq from './TemplateFaq';
 import AwsamTemplete from './AwsamTemplete';
 
 export default {
@@ -37,8 +43,14 @@ export default {
         NavIteam,
         HeroTxtCard,
         AwsamTemplete,
+        TemplateHeaderNavItems,
         TemplateHeaderLogo,
-        TemplateHeaderNavItems
+        TemplateFooter,
+        TemplateBannerImage,
+        TemplateBannerText,
+        TemplateCard,
+        TemplateFaq,
+        TemplateAdds
     },
     props: {
         drafts: {
