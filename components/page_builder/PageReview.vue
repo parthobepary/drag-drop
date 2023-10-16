@@ -24,6 +24,7 @@ import RoundLogo from './RoundLogo';
 import SquareLogo from './SquareLogo';
 import HeroTxtCard from './HeroTxtCard';
 import AwsamTemplete from './AwsamTemplete';
+import Navbar from "~/components/page_builder/Navbar.vue";
 
 export default {
     name: 'PageReview',
@@ -34,7 +35,8 @@ export default {
         RoundLogo,
         NavIteam,
         HeroTxtCard,
-        AwsamTemplete
+        AwsamTemplete,
+        Navbar
     },
     props: {
         drafts: {
