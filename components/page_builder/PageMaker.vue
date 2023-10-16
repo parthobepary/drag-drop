@@ -395,19 +395,26 @@ const blogs = ref([
             navItems: {
                 type: 'array',
                 value: [
-                    { name: 'Home', value: '/', classes: '' },
-                    { name: 'Review', value: '/', classes: '' },
+                    { id:uuidv4(), name: 'Home', value: '/', classes: 'font-bold' },
+                    { id:uuidv4(), name: 'Review', value: '/', classes: 'font-bold' },
                 ]
             },
-            title: {
+            nav_title: {
                 type: 'string',
-                value: 'Title',
+                value: 'Awesome',
             },
-
-            logo: {
-                type: 'image',
-                value: 'Logo',
-            }
+            nav_title_classes: {
+                type: 'string',
+                value: 'text-[26px] font-bold',
+            },
+            sub_nav_title: {
+                type: 'string',
+                value: '.nav',
+            },
+            nav_sub_title_classes: {
+                type: 'string',
+                value: 'text-[18px] text-pink-500',
+            },
 
         },
         components: []
@@ -466,7 +473,7 @@ const blogs = ref([
     },
     {
         id: uuidv4(),
-        name: 'Fence Button',
+        name: 'Fancy Button',
         component_name: 'FenceButton',
         props: {
             style: {
