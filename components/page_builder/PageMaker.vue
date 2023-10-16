@@ -590,6 +590,55 @@ const blogs = ref([
         components: []
     },
 
+    // faq
+
+    {
+        id: uuidv4(),
+        name: 'Fancy faq',
+        component_name: 'TemplateFaq',
+        props: {
+            style: {
+                type: 'string',
+                value: 'container mx-auto py-6'
+            },
+            bg_color: {
+                type: 'string',
+                value: ''
+            },
+            classes: {
+                type: 'string',
+                value: ''
+            },
+            question_style: {
+                type: 'string',
+                value: 'text-[20px] font-bold bg-red-100 p-1 rounded-t-md',
+            },
+            answer_style: {
+                type: 'string',
+                value: 'pl-4  bg-red-50 py-2',
+            },
+            elements: {
+                type: 'array',
+                value: [
+                    { id: uuidv4(), name: 'Why you use page builder ?', value: 'FAQ pages are intended as an initial support option for customers looking for an immediate answer to a quick question or problem', type: 'text', classes: '' },
+                    { id: uuidv4(), name: 'How to Create an FAQ Page ?', value: 'FAQ pages are intended as an initial support option for customers looking', type: 'text', classes: '' },
+                    { id: uuidv4(), name: 'Decide how you will organize the FAQ page', value: 'FAQ pages are intended as an initial support option for customers looking for an immediate answer to a quick question or problem', type: 'text', classes: '' },
+                    { id: uuidv4(), name: 'Include space for live support options', value: 'You could add a link that opens a new support ticket or even just list your call centers phone number at the bottom of the page. The idea is that customers shouldnt have to navigate back to your home page just to locate your companys email or phone number', type: 'text', classes: '' },
+                    { id: uuidv4(), name: 'Design your FAQ page', value: 'When customers do have questions that extend beyond the range of your FAQ page, you should have options available that directly connect them with your support team. ', type: 'text', classes: '' },
+                ]
+            }
+        },
+        components: [
+            {
+                id: uuidv4(),
+                name: 'Custom component',
+                component_name: 'CustomComponent',
+                props: {},
+                components: []
+            },
+        ]
+    },
+
     // footer
     {
         id: uuidv4(),
