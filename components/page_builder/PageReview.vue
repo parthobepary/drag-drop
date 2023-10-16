@@ -18,11 +18,10 @@
 <script>
 import PageReview from './PageReview.vue';
 import BodyContainer from './BodyContainer';
-import Header from './Header';
-import NavIteam from './NavIteam';
-import RoundLogo from './RoundLogo';
-import SquareLogo from './SquareLogo';
-import HeroTxtCard from './HeroTxtCard';
+import Navbar from './Navbar';
+import NavigationTitle from './NavigationTitle';
+import NavigationItems from './NavigationItems';
+import FenceButton from './FenceButton';
 import TemplateHeaderNavItems from './TemplateHeaderNavItems';
 import TemplateHeaderLogo from './TemplateHeaderLogo';
 import TemplateFooter from './TemplateFooter';
@@ -31,18 +30,20 @@ import TemplateBannerText from './TemplateBannerText';
 import TemplateAdds from './TemplateAdds';
 import TemplateCard from './TemplateCard';
 import TemplateFaq from './TemplateFaq';
-import AwsamTemplete from './AwsamTemplete';
+
+import TextComponent from './TextComponent';
+import SquareLogo from './SquareLogo';
 
 export default {
     name: 'PageReview',
     components: {
+        PageReview,
         BodyContainer,
-        Header,
+        Navbar,
         SquareLogo,
-        RoundLogo,
-        NavIteam,
-        HeroTxtCard,
-        AwsamTemplete,
+        NavigationItems,
+        NavigationTitle,
+        TextComponent,
         TemplateHeaderNavItems,
         TemplateHeaderLogo,
         TemplateFooter,
@@ -50,7 +51,8 @@ export default {
         TemplateBannerText,
         TemplateCard,
         TemplateFaq,
-        TemplateAdds
+        TemplateAdds,
+        FenceButton
     },
     props: {
         drafts: {

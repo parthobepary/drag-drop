@@ -491,13 +491,31 @@ const blogs = ref([
         },
         components: []
     },
+    // navigation item
     {
         id: uuidv4(),
         name: 'Navigation item',
         component_name: 'NavigationItems',
-        props: {},
+        props: {
+            style: {
+                type: 'string',
+                value: ''
+            },
+            classes: {
+                type: 'string',
+                value: 'flex gap-x-4 w-full justify-end py-2'
+            },
+            navItems: {
+                type: 'array',
+                value: [
+                    { id: uuidv4(), name: 'Home', value: '/', classes: 'font-bold' },
+                    { id: uuidv4(), name: 'Review', value: '/', classes: 'font-bold' },
+                ]
+            },
+        },
         components: []
     },
+    // fancy button
     {
         id: uuidv4(),
         name: 'Fancy Button',
