@@ -37,7 +37,6 @@ import SquareLogo from './SquareLogo';
 export default {
     name: 'PageReview',
     components: {
-        PageReview,
         BodyContainer,
         Navbar,
         SquareLogo,
