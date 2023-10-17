@@ -1,12 +1,5 @@
 <template>
-    <section :style="`background:${drafts.props.bg_color.value}`">
-        <!-- <PageBuilderTemplateHeader />
-        <PageBuilderTemplateBanner />
-        <PageBuilderTemplateFaq />
-        <PageBuilderTemplateAdds />
-        <PageBuilderTemplateCard />
-        <PageBuilderTemplateFooter /> -->
-        <!-- {{ drafts.components }} -->
+    <section :style="`background:${drafts?.props?.bg_color?.value}`">
         <div>
             <slot />
         </div>

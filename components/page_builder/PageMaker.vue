@@ -39,7 +39,7 @@ const blogs = ref([
     {
         id: uuidv4(),
         name: "Awesome landing page",
-        component_name: "BodyContainer",
+        component_name: "AwsamTemplete",
         props: {
             classes: {
                 type: "string",
@@ -540,55 +540,7 @@ const blogs = ref([
         },
         components: []
     },
-    // image
-    {
-        id: uuidv4(),
-        name: 'Image Component',
-        component_name: 'ImageComponent',
-        props: {
-            style: {
-                type: 'string',
-                value: ''
-            },
-            classes: {
-                type: 'string',
-                value: 'flex gap-x-4 w-full justify-end py-2'
-            },
-            navItems: {
-                type: 'array',
-                value: [
-                    { id: uuidv4(), name: 'Home', value: '/', classes: 'font-bold' },
-                    { id: uuidv4(), name: 'Review', value: '/', classes: 'font-bold' },
-                ]
-            },
-        },
-        components: []
-    },
 
-    // banner
-    {
-        id: uuidv4(),
-        name: 'Banner component',
-        component_name: 'BannerComponents',
-        props: {
-            style: {
-                type: 'string',
-                value: ''
-            },
-            classes: {
-                type: 'string',
-                value: 'flex gap-x-4 w-full justify-end py-2'
-            },
-            navItems: {
-                type: 'array',
-                value: [
-                    { id: uuidv4(), name: 'Home', value: '/', classes: 'font-bold' },
-                    { id: uuidv4(), name: 'Review', value: '/', classes: 'font-bold' },
-                ]
-            },
-        },
-        components: []
-    },
 
     // faq
 
@@ -637,31 +589,6 @@ const blogs = ref([
                 components: []
             },
         ]
-    },
-
-    // footer
-    {
-        id: uuidv4(),
-        name: 'Footer component',
-        component_name: 'FooterComponent',
-        props: {
-            style: {
-                type: 'string',
-                value: ''
-            },
-            classes: {
-                type: 'string',
-                value: 'flex gap-x-4 w-full justify-end py-2'
-            },
-            navItems: {
-                type: 'array',
-                value: [
-                    { id: uuidv4(), name: 'Home', value: '/', classes: 'font-bold' },
-                    { id: uuidv4(), name: 'Review', value: '/', classes: 'font-bold' },
-                ]
-            },
-        },
-        components: []
     },
     // single column component
     {

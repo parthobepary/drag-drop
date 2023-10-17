@@ -41,6 +41,7 @@
 import { VueDraggableNext } from 'vue-draggable-next';
 import PageNested from './PageNested.vue';
 import BodyContainer from './BodyContainer';
+import AwsamTemplete from './AwsamTemplete';
 import Navbar from './Navbar';
 import NavigationTitle from './NavigationTitle';
 import NavigationItems from './NavigationItems';
@@ -77,7 +78,8 @@ export default {
         TemplateCard,
         TemplateFaq,
         TemplateAdds,
-        FenceButton
+        FenceButton,
+        AwsamTemplete
     },
     props: {
         drafts: {
