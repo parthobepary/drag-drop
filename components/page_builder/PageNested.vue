@@ -52,8 +52,10 @@ import TemplateFooter from './TemplateFooter';
 import TemplateBannerImage from './TemplateBannerImage';
 import TemplateBannerText from './TemplateBannerText';
 import TemplateAdds from './TemplateAdds';
+import AwesomeBanner from './AwesomeBanner';
 import TemplateCard from './TemplateCard';
 import TemplateFaq from './TemplateFaq';
+import FancyImage from './FancyImage';
 
 import TextComponent from './TextComponent';
 import SquareLogo from './SquareLogo';
@@ -79,7 +81,9 @@ export default {
         TemplateFaq,
         TemplateAdds,
         FenceButton,
-        AwsamTemplete
+        AwsamTemplete,
+        AwesomeBanner,
+        FancyImage
     },
     props: {
         drafts: {

@@ -590,6 +590,122 @@ const blogs = ref([
             },
         ]
     },
+    //banner
+    {
+        id: uuidv4(),
+        name: 'Awesome Banner',
+        component_name: 'AwesomeBanner',
+        props: {
+            bg_color: {
+                type: 'string',
+                value: ''
+            },
+            classes: {
+                type: 'string',
+                value: 'grid grid-cols-2'
+            }
+        },
+        components: [
+            {
+                id: uuidv4(),
+                name: 'Left',
+                component_name: 'LeftComponent',
+                props: {
+                    classes: {
+                        type: 'string',
+                        value: ''
+                    }
+                },
+                components: [
+                    {
+                        id: uuidv4(),
+                        name: 'Fancy Image',
+                        component_name: 'FancyImage',
+                        props: {
+                            style: {
+                                type: 'string',
+                                value: 'display: flex; justify-content: start;'
+                            },
+                            classes: {
+                                type: 'string',
+                                value: ''
+                            },
+                        },
+                        components: []
+                    }
+                ]
+            },
+            {
+                id: uuidv4(),
+                name: 'Right',
+                component_name: 'RightComponent',
+                props: {
+                    classes: {
+                        type: 'string',
+                        value: ''
+                    }
+                },
+                components: [
+                    {
+                        id: uuidv4(),
+                        name: 'Text card',
+                        component_name: 'TextComponent',
+                        props: {
+                            style: {
+                                type: 'string',
+                                value: ''
+                            },
+                            bg_color: {
+                                type: 'string',
+                                value: ''
+                            },
+                            classes: {
+                                type: 'string',
+                                value: ''
+                            },
+                            elements: {
+                                type: 'array',
+                                value: [
+                                    { name: 'Here is heading', type: 'text', classes: 'text-[34px] font-bold' },
+                                    { name: 'Here is your sub title. You can change it any time any more', type: 'sub-text', classes: 'text-[2opx] font-bold' },
+                                    { name: 'Btn text', type: 'button', classes: 'text-white bg-gray-600 px-12 py-2 rounded-md my-3' },
+                                    { name: 'Here is heading', type: 'text', classes: 'text-[34px] font-bold' },
+                                    { name: 'Here is your sub title. You can change it any time any more', type: 'sub-text', classes: 'text-[2opx] font-bold' },
+                                    { name: 'Btn text', type: 'button', classes: 'text-white bg-gray-600 px-12 py-2 rounded-md my-3' },
+                                ]
+                            }
+                        },
+                        components: [
+                            {
+                                id: uuidv4(),
+                                name: 'Custom component',
+                                component_name: 'CustomComponent',
+                                props: {},
+                                components: []
+                            },
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    // Fancy image
+    {
+        id: uuidv4(),
+        name: 'Fancy Image',
+        component_name: 'FancyImage',
+        props: {
+            style: {
+                type: 'string',
+                value: 'display: flex; justify-content: start;'
+            },
+            classes: {
+                type: 'string',
+                value: ''
+            },
+        },
+        components: []
+    },
     // single column component
     {
         id: uuidv4(),
