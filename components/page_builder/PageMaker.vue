@@ -706,6 +706,39 @@ const blogs = ref([
         },
         components: []
     },
+    // footer single component
+    {
+        id: uuidv4(),
+        name: 'Fancy Footer',
+        component_name: 'FancyFooter',
+        props: {
+            style: {
+                type: 'string',
+                value: 'display: flex; justify-content: start;'
+            },
+            classes: {
+                type: 'string',
+                value: 'bg-black text-white'
+            },
+            heading: {
+                type: 'string',
+                value: 'Service'
+            },
+            heading_class: {
+                type: 'string',
+                value: 'font-bold text-[20px]'
+            },
+            elements: {
+                type: 'array',
+                value: [
+                    { name: 'Free domain/hosting', type: 'text', classes: 'text-[16px] pl-2 font-[500]' },
+                    { name: 'No need coding', type: 'text', classes: 'text-[16px] pl-2 font-[500]' },
+                    { name: 'Free dashboard', type: 'text', classes: 'text-[16px] pl-2 font-[500]' }
+                ]
+            }
+        },
+        components: []
+    },
     // Fantastic adds
     {
         id: uuidv4(),

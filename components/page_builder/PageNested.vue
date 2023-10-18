@@ -56,6 +56,7 @@ import AwesomeBanner from './AwesomeBanner';
 import TemplateCard from './TemplateCard';
 import TemplateFaq from './TemplateFaq';
 import FancyImage from './FancyImage';
+import FancyFooter from './FancyFooter';
 
 import TextComponent from './TextComponent';
 import SquareLogo from './SquareLogo';
@@ -83,7 +84,8 @@ export default {
         FenceButton,
         AwsamTemplete,
         AwesomeBanner,
-        FancyImage
+        FancyImage,
+        FancyFooter
     },
     props: {
         drafts: {
