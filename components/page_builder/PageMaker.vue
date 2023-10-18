@@ -624,7 +624,7 @@ const blogs = ref([
                         props: {
                             style: {
                                 type: 'string',
-                                value: 'display: flex; justify-content: start;'
+                                value: 'display: flex; justify-content: start; height: 396px;'
                             },
                             classes: {
                                 type: 'string',
@@ -703,6 +703,55 @@ const blogs = ref([
                 type: 'string',
                 value: ''
             },
+        },
+        components: []
+    },
+    // Fantastic adds
+    {
+        id: uuidv4(),
+        name: 'Add section',
+        component_name: 'TemplateAdds',
+        props: {
+            container_bg: {
+                type: 'string',
+                value: 'bg-blue-50'
+            },
+            container_class: {
+                type: 'string',
+                value: 'container mx-auto'
+            },
+            root_class: {
+                type: 'string',
+                value: 'bg-blue-50 flex justify-center'
+            },
+            classes: {
+                type: 'string',
+                value: 'w-[50%] text-center py-8'
+            },
+            heading_text: {
+                type: 'string',
+                value: 'Hey this ia=s a awesome heading'
+            },
+            description_text: {
+                type: 'string',
+                value: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, iste voluptatibus? Qui tempora voluptatem, quia odio alias eveniet libero quam!'
+            },
+            button_text: {
+                type: 'string',
+                value: 'Change your button text'
+            },
+            button_style: {
+                type: 'string',
+                value: 'bg-pink-700 text-white px-4 py-2 rounded-md mt-4'
+            },
+            heading_style: {
+                type: 'string',
+                value: 'text-[20px] text-blue-500 font-bold'
+            },
+            description_style: {
+                type: 'string',
+                value: 'py-2'
+            }
         },
         components: []
     },

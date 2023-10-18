@@ -1,16 +1,22 @@
 <template>
-    <section class="bg-blue-50">
-        <div class="container mx-auto">
-            <div class="flex justify-center">
-                <div class="w-[50%] text-center py-8">
-                    <h1 class="text-[20px] text-blue-500 font-bold">Hey this a awsam web page.</h1>
-                    <p class="py-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, iste
-                        voluptatibus? Qui tempora voluptatem, quia odio alias eveniet libero quam!</p>
-                    <LazyPageBuilderTemplateButton />
+    <section :class="drafts.props.container_bg.value">
+        <div :class="drafts.props.container_class.value">
+            <div :class="drafts.props.root_class.value">
+                <div :class="drafts.props.classes.value">
+                    <h1 :class="drafts.props.heading_style.value">{{ drafts.props.heading_text.value }}</h1>
+                    <p :class="drafts.props.description_style.value">{{ drafts.props.description_text.value }}</p>
+                    <button :class="drafts.props.button_style.value">{{ drafts.props.button_text.value }}</button>
                 </div>
             </div>
         </div>
     </section>
 </template>
-<script setup></script>
+<script setup>
+const props = defineProps({
+    drafts: {
+        type: Object,
+        default: {}
+    }
+})
+</script>
 <style></style>
