@@ -33,7 +33,6 @@ import PageSetting from './PageSetting.vue';
 
 // draggable js
 
-let idGlobal = 18;
 const blogs = ref([
     // our templates
     {
@@ -81,10 +80,126 @@ const blogs = ref([
                                 },
                                 components: [
                                     {
+
                                         id: uuidv4(),
-                                        name: "Nav item",
-                                        component_name: "TemplateHeaderLogo",
-                                        props: {},
+                                        name: 'Navigation title',
+                                        component_name: 'NavigationTitle',
+                                        props: {
+                                            style: {
+                                                type: 'string',
+                                                value: ''
+                                            },
+                                            classes: {
+                                                type: 'string',
+                                                value: 'flex justify-between py-2 items-center'
+                                            },
+                                            nav_title: {
+                                                type: 'string',
+                                                value: 'Awesome',
+                                            },
+                                            nav_title_classes: {
+                                                type: 'string',
+                                                value: 'text-[26px] font-bold',
+                                            },
+                                            sub_nav_title: {
+                                                type: 'string',
+                                                value: '.nav',
+                                            },
+                                            nav_sub_title_classes: {
+                                                type: 'string',
+                                                value: 'text-[18px] text-pink-500',
+                                            },
+                                        },
+                                    }
+                                ]
+                            },
+                            {
+                                id: uuidv4(),
+                                name: "Right",
+                                component_name: "RightComponent",
+                                props: {
+                                    classes: {
+                                        type: "string",
+                                        value: ""
+                                    }
+                                },
+                                components: [
+                                    {
+                                        id: uuidv4(),
+                                        name: 'Navigation item',
+                                        component_name: 'NavigationItems',
+                                        props: {
+                                            style: {
+                                                type: 'string',
+                                                value: ''
+                                            },
+                                            classes: {
+                                                type: 'string',
+                                                value: 'flex gap-x-4 w-full justify-end py-2'
+                                            },
+                                            navItems: {
+                                                type: 'array',
+                                                value: [
+                                                    { id: uuidv4(), name: 'Home', value: '/', classes: 'font-bold' },
+                                                    { id: uuidv4(), name: 'Review', value: '/', classes: 'font-bold' },
+                                                ]
+                                            },
+                                        },
+                                        components: []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: uuidv4(),
+                name: "Right",
+                component_name: "RightComponent",
+                props: {
+                    classes: {
+                        type: "string",
+                        value: "bg-red-400"
+                    }
+                },
+                components: [
+                    {
+                        id: uuidv4(),
+                        name: "Row container",
+                        component_name: "BodyContainer",
+                        props: {
+                            classes: {
+                                type: "string",
+                                value: "grid grid-cols-2"
+                            }
+                        },
+                        components: [
+                            {
+                                id: uuidv4(),
+                                name: "Right",
+                                component_name: "RightComponent",
+                                props: {
+                                    classes: {
+                                        type: "string",
+                                        value: ""
+                                    }
+                                },
+                                components: [
+                                    {
+                                        id: uuidv4(),
+                                        name: 'Fancy Image',
+                                        component_name: 'FancyImage',
+                                        props: {
+                                            style: {
+                                                type: 'string',
+                                                value: 'display: flex; justify-content: start;'
+                                            },
+                                            classes: {
+                                                type: 'string',
+                                                value: ''
+                                            },
+                                        },
                                         components: []
                                     }
                                 ]
@@ -102,10 +217,39 @@ const blogs = ref([
                                 components: [
                                     {
                                         id: uuidv4(),
-                                        name: "Nav item",
-                                        component_name: "TemplateHeaderNavItems",
-                                        props: {},
-                                        components: []
+                                        name: 'Text card',
+                                        component_name: 'TextComponent',
+                                        props: {
+                                            style: {
+                                                type: 'string',
+                                                value: ''
+                                            },
+                                            bg_color: {
+                                                type: 'string',
+                                                value: ''
+                                            },
+                                            classes: {
+                                                type: 'string',
+                                                value: ''
+                                            },
+                                            elements: {
+                                                type: 'array',
+                                                value: [
+                                                    { name: 'Here is heading', type: 'text', classes: 'text-[34px] font-bold' },
+                                                    { name: 'Here is your sub title. You can change it any time any more', type: 'sub-text', classes: 'text-[2opx] font-bold' },
+                                                    { name: 'Btn text', type: 'button', classes: 'text-white bg-gray-600 px-12 py-2 rounded-md my-3' },
+                                                ]
+                                            }
+                                        },
+                                        components: [
+                                            {
+                                                id: uuidv4(),
+                                                name: 'Custom component',
+                                                component_name: 'CustomComponent',
+                                                props: {},
+                                                components: []
+                                            },
+                                        ]
                                     }
                                 ]
                             }
@@ -131,7 +275,7 @@ const blogs = ref([
                         props: {
                             classes: {
                                 type: "string",
-                                value: "flex justify-between items-end"
+                                value: "grid grid-cols-1"
                             }
                         },
                         components: [
@@ -148,9 +292,18 @@ const blogs = ref([
                                 components: [
                                     {
                                         id: uuidv4(),
-                                        name: "Nav item",
-                                        component_name: "TemplateBannerImage",
-                                        props: {},
+                                        name: 'Fancy Image',
+                                        component_name: 'FancyImage',
+                                        props: {
+                                            style: {
+                                                type: 'string',
+                                                value: 'display: flex; justify-content: start;'
+                                            },
+                                            classes: {
+                                                type: 'string',
+                                                value: ''
+                                            },
+                                        },
                                         components: []
                                     }
                                 ]
@@ -168,155 +321,86 @@ const blogs = ref([
                                 components: [
                                     {
                                         id: uuidv4(),
-                                        name: "Nav item",
-                                        component_name: "TemplateBannerText",
-                                        props: {},
-                                        components: []
-                                    },
-                                    {
-                                        id: uuidv4(),
-                                        name: "Nav item",
-                                        component_name: "TemplateBannerText",
-                                        props: {},
-                                        components: []
-                                    },
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                id: uuidv4(),
-                name: "Right",
-                component_name: "RightComponent",
-                props: {
-                    classes: {
-                        type: "string",
-                        value: "bg-red-400"
-                    }
-                },
-                components: [
-                    {
-                        id: uuidv4(),
-                        name: "Row container",
-                        component_name: "BodyContainer",
-                        props: {
-                            classes: {
-                                type: "string",
-                                value: ""
-                            }
-                        },
-                        components: [
-                            {
-                                id: uuidv4(),
-                                name: "Right",
-                                component_name: "RightComponent",
-                                props: {
-                                    classes: {
-                                        type: "string",
-                                        value: ""
-                                    }
-                                },
-                                components: [
-                                    {
-                                        id: uuidv4(),
-                                        name: "Nav item",
-                                        component_name: "TemplateAdds",
-                                        props: {},
-                                        components: []
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                id: uuidv4(),
-                name: "Right",
-                component_name: "RightComponent",
-                props: {
-                    classes: {
-                        type: "string",
-                        value: "bg-red-400"
-                    }
-                },
-                components: [
-                    {
-                        id: uuidv4(),
-                        name: "Row container",
-                        component_name: "BodyContainer",
-                        props: {
-                            classes: {
-                                type: "string",
-                                value: ""
-                            }
-                        },
-                        components: [
-                            {
-                                id: uuidv4(),
-                                name: "Right",
-                                component_name: "RightComponent",
-                                props: {
-                                    classes: {
-                                        type: "string",
-                                        value: ""
-                                    }
-                                },
-                                components: [
-                                    {
-                                        id: uuidv4(),
-                                        name: "Nav item",
-                                        component_name: "TemplateFaq",
-                                        props: {},
-                                        components: []
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                id: uuidv4(),
-                name: "Right",
-                component_name: "RightComponent",
-                props: {
-                    classes: {
-                        type: "string",
-                        value: "bg-red-400"
-                    }
-                },
-                components: [
-                    {
-                        id: uuidv4(),
-                        name: "Row container",
-                        component_name: "BodyContainer",
-                        props: {
-                            classes: {
-                                type: "string",
-                                value: "flex justify-between items-end"
-                            }
-                        },
-                        components: [
-                            {
-                                id: uuidv4(),
-                                name: "Right",
-                                component_name: "RightComponent",
-                                props: {
-                                    classes: {
-                                        type: "string",
-                                        value: ""
-                                    }
-                                },
-                                components: [
-                                    {
-                                        id: uuidv4(),
-                                        name: "Nav item",
-                                        component_name: "TemplateCard",
-                                        props: {},
-                                        components: []
+                                        name: 'Text card',
+                                        component_name: 'TextComponent',
+                                        props: {
+                                            style: {
+                                                type: 'string',
+                                                value: ''
+                                            },
+                                            bg_color: {
+                                                type: 'string',
+                                                value: ''
+                                            },
+                                            classes: {
+                                                type: 'string',
+                                                value: ''
+                                            },
+                                            elements: {
+                                                type: 'array',
+                                                value: [
+                                                    { name: 'Here is heading', type: 'text', classes: 'text-[34px] font-bold' },
+                                                    { name: 'Here is your sub title. You can change it any time any more', type: 'sub-text', classes: 'text-[2opx] font-bold' },
+                                                    { name: 'Btn text', type: 'button', classes: 'text-white bg-gray-600 px-12 py-2 rounded-md my-3' },
+                                                ]
+                                            }
+                                        },
+                                        components: [
+                                            {
+                                                id: uuidv4(),
+                                                name: 'Custom component',
+                                                component_name: 'CustomComponent',
+                                                props: {},
+                                                components: [
+                                                    {
+                                                        id: uuidv4(),
+                                                        name: 'Fancy faq',
+                                                        component_name: 'TemplateFaq',
+                                                        props: {
+                                                            style: {
+                                                                type: 'string',
+                                                                value: 'container mx-auto py-6'
+                                                            },
+                                                            bg_color: {
+                                                                type: 'string',
+                                                                value: ''
+                                                            },
+                                                            classes: {
+                                                                type: 'string',
+                                                                value: ''
+                                                            },
+                                                            question_style: {
+                                                                type: 'string',
+                                                                value: 'text-[20px] font-bold bg-red-100 p-1 rounded-t-md',
+                                                            },
+                                                            answer_style: {
+                                                                type: 'string',
+                                                                value: 'pl-4  bg-red-50 py-2',
+                                                            },
+                                                            elements: {
+                                                                type: 'array',
+                                                                value: [
+                                                                    { id: uuidv4(), name: 'Why you use page builder ?', value: 'FAQ pages are intended as an initial support option for customers looking for an immediate answer to a quick question or problem', type: 'text', classes: '' },
+                                                                    { id: uuidv4(), name: 'How to Create an FAQ Page ?', value: 'FAQ pages are intended as an initial support option for customers looking', type: 'text', classes: '' },
+                                                                    { id: uuidv4(), name: 'Decide how you will organize the FAQ page', value: 'FAQ pages are intended as an initial support option for customers looking for an immediate answer to a quick question or problem', type: 'text', classes: '' },
+                                                                    { id: uuidv4(), name: 'Include space for live support options', value: 'You could add a link that opens a new support ticket or even just list your call centers phone number at the bottom of the page. The idea is that customers shouldnt have to navigate back to your home page just to locate your companys email or phone number', type: 'text', classes: '' },
+                                                                    { id: uuidv4(), name: 'Design your FAQ page', value: 'When customers do have questions that extend beyond the range of your FAQ page, you should have options available that directly connect them with your support team. ', type: 'text', classes: '' },
+                                                                ]
+                                                            }
+                                                        },
+                                                        components: [
+                                                            {
+                                                                id: uuidv4(),
+                                                                name: 'Custom component',
+                                                                component_name: 'CustomComponent',
+                                                                props: {},
+                                                                components: []
+                                                            },
+                                                        ]
+                                                    },
+                                                ]
+                                            },
+                                        ]
                                     }
                                 ]
                             },
@@ -337,19 +421,84 @@ const blogs = ref([
                 components: [
                     {
                         id: uuidv4(),
+                        name: 'Add section',
+                        component_name: 'TemplateAdds',
+                        props: {
+                            style: {
+                                type: 'string',
+                                value: ''
+                            },
+                            container_bg: {
+                                type: 'string',
+                                value: 'bg-blue-50'
+                            },
+                            container_class: {
+                                type: 'string',
+                                value: 'container mx-auto'
+                            },
+                            root_class: {
+                                type: 'string',
+                                value: 'bg-blue-50 flex justify-center'
+                            },
+                            classes: {
+                                type: 'string',
+                                value: 'w-[50%] text-center py-8'
+                            },
+                            heading_text: {
+                                type: 'string',
+                                value: 'Hey this ia=s a awesome heading'
+                            },
+                            description_text: {
+                                type: 'string',
+                                value: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, iste voluptatibus? Qui tempora voluptatem, quia odio alias eveniet libero quam!'
+                            },
+                            button_text: {
+                                type: 'string',
+                                value: 'Change your button text'
+                            },
+                            button_style: {
+                                type: 'string',
+                                value: 'bg-pink-700 text-white px-4 py-2 rounded-md mt-4'
+                            },
+                            heading_style: {
+                                type: 'string',
+                                value: 'text-[20px] text-blue-500 font-bold'
+                            },
+                            description_style: {
+                                type: 'string',
+                                value: 'py-2'
+                            }
+                        },
+                        components: []
+                    }
+                ]
+            },
+            {
+                id: uuidv4(),
+                name: "Right",
+                component_name: "RightComponent",
+                props: {
+                    classes: {
+                        type: "string",
+                        value: "bg-red-400"
+                    }
+                },
+                components: [
+                    {
+                        id: uuidv4(),
                         name: "Row container",
                         component_name: "BodyContainer",
                         props: {
                             classes: {
                                 type: "string",
-                                value: ""
+                                value: "grid grid-cols-2"
                             }
                         },
                         components: [
                             {
                                 id: uuidv4(),
-                                name: "Footer",
-                                component_name: "Footer component",
+                                name: "Right",
+                                component_name: "RightComponent",
                                 props: {
                                     classes: {
                                         type: "string",
@@ -359,17 +508,87 @@ const blogs = ref([
                                 components: [
                                     {
                                         id: uuidv4(),
-                                        name: "Footer",
-                                        component_name: "TemplateFooter",
-                                        props: {},
+                                        name: 'Fancy Footer',
+                                        component_name: 'FancyFooter',
+                                        props: {
+                                            style: {
+                                                type: 'string',
+                                                value: 'display: flex; justify-content: start;'
+                                            },
+                                            classes: {
+                                                type: 'string',
+                                                value: 'bg-black text-white'
+                                            },
+                                            heading: {
+                                                type: 'string',
+                                                value: 'Service'
+                                            },
+                                            heading_class: {
+                                                type: 'string',
+                                                value: 'font-bold text-[20px]'
+                                            },
+                                            elements: {
+                                                type: 'array',
+                                                value: [
+                                                    { name: 'Free domain/hosting', type: 'text', classes: 'text-[16px] pl-2 font-[500]' },
+                                                    { name: 'No need coding', type: 'text', classes: 'text-[16px] pl-2 font-[500]' },
+                                                    { name: 'Free dashboard', type: 'text', classes: 'text-[16px] pl-2 font-[500]' }
+                                                ]
+                                            }
+                                        },
                                         components: []
                                     }
                                 ]
                             },
+                            {
+                                id: uuidv4(),
+                                name: "Right",
+                                component_name: "RightComponent",
+                                props: {
+                                    classes: {
+                                        type: "string",
+                                        value: ""
+                                    }
+                                },
+                                components: [
+                                    {
+                                        id: uuidv4(),
+                                        name: 'Fancy Footer',
+                                        component_name: 'FancyFooter',
+                                        props: {
+                                            style: {
+                                                type: 'string',
+                                                value: 'display: flex; justify-content: start;'
+                                            },
+                                            classes: {
+                                                type: 'string',
+                                                value: 'bg-black text-white'
+                                            },
+                                            heading: {
+                                                type: 'string',
+                                                value: 'Service'
+                                            },
+                                            heading_class: {
+                                                type: 'string',
+                                                value: 'font-bold text-[20px]'
+                                            },
+                                            elements: {
+                                                type: 'array',
+                                                value: [
+                                                    { name: 'Free domain/hosting', type: 'text', classes: 'text-[16px] pl-2 font-[500]' },
+                                                    { name: 'No need coding', type: 'text', classes: 'text-[16px] pl-2 font-[500]' },
+                                                    { name: 'Free dashboard', type: 'text', classes: 'text-[16px] pl-2 font-[500]' }
+                                                ]
+                                            }
+                                        },
+                                        components: []
+                                    }
+                                ]
+                            }
                         ]
                     }
                 ]
-            }
+            },
         ]
     },
 
@@ -745,6 +964,10 @@ const blogs = ref([
         name: 'Add section',
         component_name: 'TemplateAdds',
         props: {
+            style: {
+                type: 'string',
+                value: ''
+            },
             container_bg: {
                 type: 'string',
                 value: 'bg-blue-50'
