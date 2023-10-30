@@ -57,7 +57,9 @@ import TemplateCard from './TemplateCard';
 import TemplateFaq from './TemplateFaq';
 import FancyImage from './FancyImage';
 import FancyFooter from './FancyFooter';
-
+import CustomerReview from "~/components/page_builder/CustomerReview.vue";
+import ProductSection from "~/components/page_builder/ProductSection.vue";
+import ProductHeadline from "~/components/page_builder/ProductHeadline.vue";
 import TextComponent from './TextComponent';
 import SquareLogo from './SquareLogo';
 import { ref } from 'vue'
@@ -85,7 +87,10 @@ export default {
         AwsamTemplete,
         AwesomeBanner,
         FancyImage,
-        FancyFooter
+        CustomerReview,
+        FancyFooter,
+        ProductSection,
+        ProductHeadline
     },
     props: {
         drafts: {
