@@ -593,6 +593,50 @@ const blogs = ref([
     },
 
     // our ready component blocks
+    // section
+
+    {
+        id: uuidv4(),
+        name: 'Section',
+        component_name: 'SectionContainerModal',
+        props: {
+            style: {
+                type: 'string',
+                value: 'width:100%;'
+            },
+            classes: {
+                type: 'string',
+                value: 'py-4'
+            },
+            bg_color: {
+                type: 'string',
+                value: 'red'
+            },
+            bg_image: {
+                type: 'string',
+                value: 'https://png.pngtree.com/thumb_back/fh260/background/20211031/pngtree-abstract-bg-image_914283.png'
+            },
+            bg_image_property: {
+                type: 'string',
+                value: 'background-position: center; background-size: auto;'
+            },
+        },
+        components: [
+            {
+                id: uuidv4(),
+                name: 'Left',
+                component_name: 'Section',
+                props: {
+                    classes: {
+                        type: 'string',
+                        value: ''
+                    }
+                },
+                components: []
+            },
+        ]
+    },
+
     //nav bar
     {
         id: uuidv4(),
@@ -1053,6 +1097,60 @@ const blogs = ref([
                 id: uuidv4(),
                 name: 'Left',
                 component_name: 'LeftComponent',
+                props: {
+                    classes: {
+                        type: 'string',
+                        value: ''
+                    }
+                },
+                components: []
+            },
+            {
+                id: uuidv4(),
+                name: 'Right',
+                component_name: 'RightComponent',
+                props: {
+                    classes: {
+                        type: 'string',
+                        value: ''
+                    }
+                },
+                components: []
+            }
+        ]
+    },
+    // three column component
+    {
+        id: uuidv4(),
+        name: 'Three column Component',
+        component_name: 'BodyContainer',
+        props: {
+            container_class: {
+                type: 'string',
+                value: 'container mx-auto'
+            },
+            classes: {
+                type: 'string',
+                value: 'grid grid-cols-3'
+            }
+        },
+        components: [
+            {
+                id: uuidv4(),
+                name: 'Left',
+                component_name: 'LeftComponent',
+                props: {
+                    classes: {
+                        type: 'string',
+                        value: ''
+                    }
+                },
+                components: []
+            },
+            {
+                id: uuidv4(),
+                name: 'Right',
+                component_name: 'MiddleComponent',
                 props: {
                     classes: {
                         type: 'string',

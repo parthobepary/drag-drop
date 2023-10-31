@@ -57,7 +57,7 @@ import TemplateCard from './TemplateCard';
 import TemplateFaq from './TemplateFaq';
 import FancyImage from './FancyImage';
 import FancyFooter from './FancyFooter';
-
+import SectionContainerModal from './SectionContainerModal.vue';
 import TextComponent from './TextComponent';
 import SquareLogo from './SquareLogo';
 import { ref } from 'vue'
@@ -85,7 +85,8 @@ export default {
         AwsamTemplete,
         AwesomeBanner,
         FancyImage,
-        FancyFooter
+        FancyFooter,
+        SectionContainerModal
     },
     props: {
         drafts: {

@@ -33,6 +33,8 @@ import TemplateFaq from './TemplateFaq';
 import AwesomeBanner from './AwesomeBanner';
 import FancyImage from './FancyImage';
 import FancyFooter from './FancyFooter';
+import SectionContainerModal from './SectionContainerModal.vue'
+
 
 import TextComponent from './TextComponent';
 import SquareLogo from './SquareLogo';
@@ -57,7 +59,8 @@ export default {
         FenceButton,
         AwesomeBanner,
         FancyImage,
-        FancyFooter
+        FancyFooter,
+        SectionContainerModal
     },
     props: {
         drafts: {

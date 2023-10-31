@@ -1,5 +1,5 @@
 <template>
-    <div class="container mx-auto">
+    <div :class="drafts?.props?.container_class?.value">
         <slot />
     </div>
 </template>
