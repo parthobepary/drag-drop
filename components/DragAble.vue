@@ -8,6 +8,13 @@
                         :key="element.name">
                         {{ element.name }}
                     </div>
+                    <VueDraggableNext class="dragArea list-group w-full" :list="list2"
+                    :group="{ name: 'people'}" :sort="true" @change="log" :move="checkMove">
+                    <div class="list-group-item bg-gray-300 m-1 p-3 rounded-md text-center" v-for="element in list2"
+                        :key="element.name">
+                        {{ element.name }}
+                    </div>
+                </VueDraggableNext>
                 </VueDraggableNext>
             </div>
             <div class="card1 w-64 flex justify-center">
