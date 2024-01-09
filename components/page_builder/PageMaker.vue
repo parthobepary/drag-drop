@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="grid grid-cols-5">
-            <div class="col-span-1 bg-red-200 w-full min-h-[100vh]">
+            <div class="col-span-1 bg-red-200 w-full h-screen">
                 <!-- draggable component -->
                 <VueDraggableNext class="dragArea list-group w-full" :list="blogs"
                     :group="{ name: 'task', pull: 'clone', put: false }" :sort="true" :clone="cloneDog">
@@ -11,7 +11,7 @@
                     </div>
                 </VueDraggableNext>
             </div>
-            <div class="col-span-3 bg-gray-200 w-full min-h-[100vh]">
+            <div class="col-span-3 bg-gray-200 w-full">
                 <!-- Editor component -->
                 <PageBuilderPageNested :drafts="drafts" />
 
@@ -19,7 +19,7 @@
                     <button @click="saveData" class="bg-green-500 p-2 rounded-md text-white">Published</button>
                 </div>
             </div>
-            <div v-if="drafts.length > 0" class="px-2 col-span-1 bg-blue-200 w-full min-h-[100vh]">
+            <div v-if="drafts.length > 0" class="px-2 col-span-1 bg-blue-200 w-full  h-screen overflow-y-auto">
                 <!-- Source code -->
                 <PageSetting :drafts="drafts" />
             </div>
